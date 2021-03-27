@@ -1,0 +1,73 @@
+<div class="container wow bounceInDown">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-block bg-register-image">
+                    <%= image_tag "img/luot-van.jpg" %>
+
+                </div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Tạo tài khoản mới!</h1>
+                            <section class="content" style="min-height: auto;display: flex;justify-content: center;">
+                                <% flash.each do |key, value| %>
+                                <div class="row">
+                                    <div class="alert alert-<%= key %>">
+                                        <%= value %>
+                                    </div>
+                                </div>
+                                <% end %>
+                            </section>
+                        </div>
+                        <%= form_for @user, html: {class: "user form-group"} do |f| %>
+                        <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <%= f.text_field :firstName, class: "form-control form-control-user", placeholder: "Họ",required: "true" %>
+                            </div>
+                            <div class="col-sm-6">
+                                <%= f.text_field :lastName, class: "form-control form-control-user", placeholder: "Tên",required: "true" %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <%= f.email_field :email, class: "form-control form-control-user", placeholder: "Email",required: "true" %>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <%= f.password_field :password, class: "form-control form-control-user", placeholder: "Mật khẩu",required: "true" %>
+                            </div>
+                            <div class="col-sm-6">
+                                <%= f.password_field :password_confirmation, class: "form-control form-control-user", placeholder: "Nhập lại mật khẩu",required: "true" %>
+                            </div>
+                            <%= f.hidden_field :role,required: "true", value:"customer" %>
+                        </div>
+                        <%= f.submit "Đăng kí", class: "btn btn-primary btn-user btn-block" %>
+
+                        <hr>
+                        <!-- <hr> -->
+                        <a href="#" class="btn btn-google btn-user btn-block">
+                            <i class="fab fa-google-plus"></i> Google
+                        </a>
+                        <a href="#" class="btn btn-facebook btn-user btn-block">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                        <% end %>
+                        <hr>
+                        <div class="text-center">
+                            <a class="small" href="#">Quên mật khẩu</a>
+                        </div>
+                        <div class="text-center">
+                            <%= link_to 'login' , :action=> 'go' do %>
+                            <p class="small">Bạn đã có tài khoản? Đăng nhập!</p>
+
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

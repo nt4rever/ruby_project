@@ -1,0 +1,54 @@
+body {
+    font-family: "Fira Sans", sans-serif;
+}
+
+.row img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+input.btn.btn-primary.btn-user.btn-block:hover {
+    opacity: 0.8;
+    transition: 0.4s;
+}
+a.btn.btn-google.btn-user.btn-block {
+    background: #ea4335;
+    color: white;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+a.btn.btn-facebook.btn-user.btn-block {
+    background: #3b5998;
+    color: white;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+a.btn:hover {
+    opacity: 0.9;
+    transition: 0.4s;
+}
+
+a.btn.btn-primary.btn-user.btn-block {
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.user input {
+    border-radius: 25px;
+    padding: 23px;
+}
+
+body {
+    background: #65bc7b;
+}
+
+input.btn.btn-primary.btn-user.btn-block {
+    background: #3b5998;
+    border-radius: 25px;
+    padding: 10px;
+    color: white;
+}

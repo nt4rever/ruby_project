@@ -1,0 +1,85 @@
+<div class="container wow bounceInDown">
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-12 col-md-9">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                            <div class="noidung">
+                                <div class="anh">
+                                    <%= image_tag "img/luot-van.jpg" %>
+                                </div>
+                                <%= link_to root_path , :action=> 'go' do %>
+                                <div class="tieude">
+                                    <h3>Trang chủ</h3>
+                                </div>
+                                <% end %>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 sidebar">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Chào mừng!</h1>
+                                    <section class="content" style="min-height: auto;display: flex;justify-content: center;">
+                                        <% flash.each do |key, value| %>
+                                        <div class="row">
+                                            <div class="alert alert-<%= key %>">
+                                                <%= value %>
+                                            </div>
+                                        </div>
+                                        <% end %>
+                                    </section>
+                                </div>
+                                <%= form_for:session,url: login_path, html: {class: "user form-group"} do |f| %>
+
+                                <%# <form class="user form-group" name='flogin' action='login.php' method='POST'> %>
+                                <div class="form-group">
+                                    <%= f.email_field :email, class: "form-control form-control-user", placeholder: "Email", requireed: "true" %>
+                                    <%# <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." required name='USERNAME'> %>
+                                </div>
+                                <div class="form-group">
+                                    <%= f.password_field :password, class: "form-control form-control-user", placeholder: "Mật khẩu", required: "true" %>
+                                    <%# <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" required name='PASSWORD'> %>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox small">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                                        <label class="custom-control-label" for="customCheck">Nhớ mật khẩu</label>
+                                    </div>
+                                </div>
+                                <!-- <a href="index.php" class="btn btn-primary btn-user btn-block" onclick="return checkInput();">
+                                            Login
+                                        </a> -->
+                                <%= f.submit "Đăng nhập", class: "btn btn-primary btn-user btn-block" %>
+                                <%# <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" name='dangnhap'> %>
+                                <hr>
+                                <%# <a href="#" class="btn btn-google btn-user btn-block">
+                                    <i class="fa fa-google fa-fw"></i> Google
+                                </a>
+                                <a href="#" class="btn btn-facebook btn-user btn-block">
+                                    <i class="fa fa-facebook-f fa-fw"></i> Facebook
+                                </a> %>
+
+                                <%# </form> %>
+                                <% end %>
+                                <%# <hr> %>
+                                <div class="text-center">
+                                    <a class="small" href="forgot-password.html">Quên mật khẩu?</a>
+                                </div>
+                                <div class="text-center">
+                                    <%= link_to 'register' , :action=> 'go' do %>
+                                    <p class="small">Tạo tài khoản mới!</p>
+                                    <% end %>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

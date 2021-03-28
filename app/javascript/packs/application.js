@@ -13,11 +13,28 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 require("jquery/src/jquery")
+
 import "bootstrap"
 
 import "@fortawesome/fontawesome-free/js/all";
 import "./jquery_easing.js"
-// import "./index.js";
+
+require('isotope-layout')
+
+var jQueryBridget = require('jquery-bridget');
+var Isotope = require('isotope-layout');
+
+jQueryBridget( 'isotope', Isotope, $ );
+
 $(function(){
     $('[data-toggle="tooltip"]').tooltip();
+     $('.toast').toast('show');
+    $('.sanpham').isotope({
+        // options
+        itemSelector: '.khoisp',
+        layoutMode: 'masonry'
+    });
+
+
 })
+

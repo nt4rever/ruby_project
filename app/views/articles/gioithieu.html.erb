@@ -1,0 +1,188 @@
+<div class="wrapper">
+    
+    <div class="main_gt">
+        <header>
+            <nav class="nav_Bar container navbar navbar-expand-lg navbar-primary|secondary|success|danger|warning|info|light|dark bg-primary|secondary|success|danger|warning|info|light|dark">
+                <a class="navbar-brand logo_tieude" href="<%= root_path %>">LangCoBeach</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars icon_bar"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= root_path %>">TRANG CHỦ <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= khachsan_path %>">KHÁCH SẠN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= dichvu_path %>">DỊCH VỤ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= tintuc_path %>">TIN TỨC</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<%= gioithieu_path %>">GIỚI THIỆU</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="lienhe.html">LIÊN HỆ</a>
+                        </li>
+                        <li class="nav-item search_nav_cha">
+                            <div class="search">
+                                <div class="nav-link">
+                                    <span>Search</span>
+                                    <i class="fa fa-search"></i>
+                                </div>
+                            </div>
+                            <div class="form_search_navbar flex-row">
+                                <input type="text" name="" id="" class="form-control">
+                                <div class="icon_search_navbar">
+                                    <button type="submit" class="form-control"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../html/giohang.html">
+                                <div class="giohang">
+                                    <div class="nav-link">
+                                        <span>0đ</span>
+                                        <i class="fa fa-shopping-bag"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <% if  session[:username] %>
+                            <%= link_to 'logout' , :action=> 'go' do %>
+                            <div class="giohang dangnhap">
+                                <div class="nav-link">
+                                    <span id="username"> <%= session[:username] %></span>
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </div>
+                            </div>
+                            <% end %>
+                            <% else %>
+                            <%= link_to 'login' , :action=> 'go' do %>
+                            <div class="giohang dangnhap">
+                                <div class="nav-link">
+                                    <span id="username"> Login</span>
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </div>
+                            </div>
+                            <% end %>
+                            <% end %>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+
+
+        <div class="banner">
+            <div class="overlay">
+            </div>
+            <div class="noidung text-center">
+                <h3>NT_4rever</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sequi ipsam earum officia
+                    cupiditate
+                    mollitia alias rerum dolores vero blanditiis, possimus dicta. Saepe tempora sapiente ullam et quo
+                    perspiciatis debitis.</p>
+            </div>
+        </div>
+        <div class="text_gioithieu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h4>MỤC TIÊU</h4>
+                        <p id="div_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                            euismod tincidunt
+                            ut laoreet dolore magna aliquam erat volutpat.</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h4>SỨ MỆNH</h4>
+                        <p id="div_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                            euismod tincidunt
+                            ut laoreet dolore magna aliquam erat volutpat.</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h4>TƯƠNG LAI</h4>
+                        <p id="div_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                            euismod tincidunt
+                            ut laoreet dolore magna aliquam erat volutpat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <footer>
+            <div class="tren">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 sec1">
+                            <h3>Lang Co beach</h3>
+                            <p>Mã số thuế: 031422xxx</p>
+                            <p>Ngày cấp giấy phép: 01/01/2019</p>
+                            <p>Ngày hoạt động: 01/01/2019</p>
+                        </div>
+                        <div class="col-lg-3 sec2">
+                            <div class="tieude">
+                                <h4>Liên Hệ</h4>
+                            </div>
+                            <div class="noidung">
+                                <p><i class="fa fa-map-marker"></i><span> Trường đại học CNTT và TT Việt Hàn</span>
+                                </p>
+                                <p><i class="fa fa-phone"></i><span> 0336757208</span></p>
+                                <p><i class="fa fa-envelope"></i><span> levantanald@gmail.com</span></p>
+                                <p class="iconf">
+                                    <a href="" data-toggle="tooltip" data-placement="bottom" title="Facebook"> <i class="fab fa-facebook"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 sec3">
+                            <div class="tieude">
+                                <h4>Tin tức</h4>
+                            </div>
+                            <div class="noidung">
+                                <ul>
+                                    <li><a href="">Bản tin du lịch Việt</a></li>
+                                    <li><a href="">Cẩm nang du lịch</a></li>
+                                    <li><a href="">Tư vấn du lịch</a></li>
+                                    <li><a href="">Tuyển dụng du lịch</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 sec4">
+                            <div class="tieude">
+                                <h4>Tour phổ biến</h4>
+                            </div>
+                            <div class="noidung">
+                                <%= image_tag "img/footter.png" %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="duoi">
+                <p>© All rights reserved. Thiết kế website NT_4rever</p>
+            </div>
+        </footer>
+
+
+        <!-- end main -->
+    </div>
+
+</div>
+<span  class="btn_top_a">
+    <div class="btn_top" id="btn_top">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+</span>
+<%= javascript_pack_tag 'index' %>
+<%= javascript_pack_tag 'flickity' %>
+

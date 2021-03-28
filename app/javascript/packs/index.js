@@ -9,6 +9,14 @@ $(function () {
         }, 3000);
     });
 
+    $('a.carousel-control-prev').on('click', function(){
+        click_slider()
+    })
+
+     $('a.carousel-control-next').on('click', function(){
+        click_slider()
+    })
+
     $(document).scroll(function () {
         var scrollDistance = $(this).scrollTop();
         if (scrollDistance > 200) {

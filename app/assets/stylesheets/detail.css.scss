@@ -1,0 +1,326 @@
+
+
+.dieuhuong {
+    background: #2196f31f;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.dieuhuong .trai.col-lg-6 {
+    padding-left: 0;
+}
+
+.dieuhuong span.trai1 a {
+    color: #666666d9;
+}
+
+.dieuhuong span.trai2 {
+    color: #a9acaca1;
+}
+
+.dieuhuong span.trai3 {
+    color: #666666d9;
+    font-weight: 500;
+}
+
+.dieuhuong .trai a:hover {
+    text-decoration: none;
+    color: #0086cd;
+}
+
+.maindt .sec_trai img {
+    width: 100%;
+}
+
+.is-divider.small {
+    border: 2px solid #89969780;
+    width: 20%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.maindt {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.maindt p.iconf a {
+    color: black;
+    font-size: 30px;
+    transition: 0.4s;
+    padding: 5px;
+}
+
+.maindt p.iconf a:hover {
+    color: #00000080;
+}
+
+.othersp .sanpham {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.othersp {
+.khoisp {
+    width: 24%;
+    border: 1px solid #dee9de;
+    box-shadow: #b4b4a0 0 0 1px 0px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    transition: 0.4s;
+}
+
+@media(max-width:576px) {
+    .khoisp {
+        width: 47.5%;
+    }
+}
+
+.khoisp .anh img {
+    width: 100%;
+}
+
+.khoisp .chitiet {
+    padding: 15px;
+}
+
+.khoisp p.text-muted.location {
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.khoisp p.text-dark.title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0;
+    transition: 0.4s;
+}
+
+.khoisp p.gia {
+    font-weight: 600;
+}
+
+.khoisp span.text-primary.truoc {
+    opacity: 0.3;
+}
+
+.khoisp p.gioithieu {
+    text-align: justify;
+    font-size: 14px;
+    opacity: 0.8;
+    color: black;
+}
+
+.khoisp:hover {
+    box-shadow: #b4b4a0 0 0 3px 0px;
+}
+
+.khoisp a:hover {
+    text-decoration: none;
+}
+
+.khoisp p.text-dark.title:hover {
+    color: #0086cd!important;
+}
+
+}
+
+.othersp .tieude {
+    margin-bottom: 20px;
+}
+
+.othersp {
+    padding-top: 100px;
+    margin-bottom: 80px;
+}
+
+.othersp .tieude h3 {
+    font-size: 22px;
+}
+
+.thongtin {
+    height: 300px;
+}
+
+.bon_nut {
+    background: white;
+    width: 900px;
+    height: 75px;
+    margin: auto;
+}
+
+.bon_nut li {
+    float: left;
+    margin: 10px;
+}
+
+.bon_nd {
+    padding: 20px;
+    width: 900px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.moi_dung {
+    line-height: 20px;
+    color: gray;
+    font-size: 14px;
+}
+
+.bon_nd li {
+    position: absolute;
+    width: 900px;
+    border: 1px solid #f3ab4b;
+    padding: 20px;
+    border-radius: 4px;
+    transition: 0.8s;
+}
+
+.bon_nd li:after {
+    content: "";
+    height: 20px;
+    width: 20px;
+    display: block;
+    border: 1px solid #f3ab4b;
+    position: absolute;
+    /* background: rebeccapurple; */
+    top: -10.5px;
+    left: 100px;
+    transform: rotateZ(45deg);
+}
+
+.bon_nd li:before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    display: block;
+    /* border: 1px solid #f3ab4b; */
+    position: absolute;
+    background: white;
+    top: -8.9px;
+    left: 100px;
+    transform: rotateZ(45deg);
+    z-index: 2;
+}
+
+li.active b.btn {
+    background-color: #ffc107;
+    color: #ffffff;
+}
+
+.bon_nd li {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.001);
+}
+
+.bon_nd li.hien_len {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.box_cmt {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cmt {
+    width: 32%;
+    margin-bottom: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.box_danhgia input.form-control {
+    width: 70%;
+    float: left;
+}
+
+.box_danhgia button.btn.btn-outline-primary {
+    margin-left: 10px;
+    width: 15%;
+}
+
+@media(max-width:576px) {
+    .bon_nd {
+        padding: 20px;
+        width: 400px;
+        box-sizing: border-box;
+        margin: auto;
+    }
+    .bon_nd li {
+        position: absolute;
+        width: 400px;
+        border: 1px solid #f3ab4b;
+        padding: 20px;
+        border-radius: 4px;
+        transition: 0.8s;
+    }
+    .bon_nut {
+        background: white;
+        width: 400px;
+        height: 75px;
+        margin: auto;
+    }
+    .cmt {
+        width: 100%;
+        margin-bottom: 30px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .box_danhgia input.form-control {
+        width: 60%;
+    }
+    .box_danhgia button.btn.btn-outline-primary {
+        margin-left: 10px;
+        width: 25%;
+    }
+}
+
+b.btn.btn-outline-warning:hover {
+    color: white;
+}
+
+.detail_slide {
+
+.hinhanh h3.text-center {
+    margin-bottom: 30px;
+}
+
+.hinhanh.container {
+    margin-bottom: 100px;
+}
+
+.hinhanh img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.carousel {
+    background: #EEE;
+}
+
+.carousel-cell {
+    width: 100%;
+    height: 600px;
+    margin-right: 10px;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+}
+
+/* cell number */
+
+@media(max-width:576px) {
+    .carousel-cell {
+        width: 100%;
+        height: 300px;
+        margin-right: 10px;
+        border-radius: 5px;
+        counter-increment: carousel-cell;
+    }
+}
+}

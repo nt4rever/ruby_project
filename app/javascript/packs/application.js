@@ -22,21 +22,25 @@ import "./jquery_easing.js"
 
 require('admin-lte');
 require('isotope-layout')
-
 var jQueryBridget = require('jquery-bridget');
 var Isotope = require('isotope-layout');
 
-jQueryBridget( 'isotope', Isotope, $ );
+jQueryBridget('isotope', Isotope, $);
 
-$(function(){
+$(function () {
     $('[data-toggle="tooltip"]').tooltip();
-     $('.toast').toast('show');
+    $('.toast').toast('show');
     $('.sanpham').isotope({
         // options
         itemSelector: '.khoisp',
         layoutMode: 'masonry'
     });
-
+    if ($('textarea').length > 0) {
+        var data = $('.ckeditor');
+        $.each(data, function (i) {
+            CKEDITOR.replace(data[i].id)
+        });
+    }
 
 })
 

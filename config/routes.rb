@@ -20,6 +20,14 @@ Rails.application.routes.draw do
   resources :users
 
   # admin space
-  get "/admin", to: "admin#index"
-  get 'category/category'
+  get "admin", to: "admin#index"
+  scope 'admin' do
+       get 'category', to: 'category#category'
+       get 'new_category', to: 'category#new'
+       post 'create_category', to: 'category#create'
+       get 'delete_category', to: 'category#destroy'
+       get 'edit_category', to: 'category#edit'
+       post 'update_category', to: 'category#update'
+  end
+  
 end

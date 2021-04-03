@@ -1,2 +1,78 @@
-<h1>Category#category</h1>
-<p>Find me in app/views/category/category.html.erb</p>
+ <h1 class="m-0 text-dark pb-2">Danh mục</h1>
+ <section class="content" style="min-height: auto;display: flex;justify-content: center;">
+     <% flash.each do |key, value| %>
+     <div class="row">
+         <div class="alert alert-<%= key %>">
+             <%= value %>
+         </div>
+     </div>
+     <% end %>
+ </section>
+ <div class="row">
+     <div class="col-12">
+         <div class="card">
+             <div class="card-header">
+                 <a href="<%= new_category_path %>" class="btn btn-secondary">Thêm danh mục</a>
+                 <div class="card-tools">
+                     <div class="input-group input-group-sm" style="width: 150px;">
+                         <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                         <div class="input-group-append">
+                             <button type="submit" class="btn btn-default">
+                                 <i class="fas fa-search"></i>
+                             </button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <!-- /.card-header -->
+             <div class="card-body table-responsive p-0" style="height: 400px;">
+                 <table class="table table-head-fixed text-nowrap">
+                     <thead>
+                         <tr>
+                             <th>id</th>
+                             <th>category_name</th>
+                             <th>category_desc</th>
+                             <th>created_at</th>
+                             <th>updated_at</th>
+                             <th>edit</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <% if @all_category %>
+                         <% @all_category.each do |cate| %>
+                         <tr>
+                             <td>
+                                 <%= cate.id  %>
+                             </td>
+                             <td>
+                                 <%= cate.category_name  %>
+                             </td>
+                             <td>
+                                 <%= raw(cate.category_desc)  %>
+                             </td>
+                             <td>
+                                 <%= cate.created_at  %>
+                             </td>
+                             <td>
+                                 <%= cate.updated_at %>
+                             </td>
+                             <td>
+                                 <a href="<%= delete_category_path(:id =>cate.id) %>" class="btn btn-sm btn-danger" onclick='return confirm("Xóa danh mục này!");'>
+                                     <i class="fas fa-trash"></i>
+                                 </a>
+                                  <a href="<%= edit_category_path(:id =>cate.id) %>" class="btn btn-sm btn-warning" onclick='return confirm("Sửa danh mục này!");'>
+                                     <i class="fas fa-edit"></i>
+                                 </a>
+                             </td>
+                         </tr>
+                         <% end %>
+                         <% end %>
+                     </tbody>
+                 </table>
+             </div>
+             <!-- /.card-body -->
+         </div>
+         <!-- /.card -->
+     </div>
+ </div>

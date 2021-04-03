@@ -1,0 +1,2 @@
+class CategoryHotel < ApplicationRecord
+end

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  desc: 
+  price: 
+  image: 
+  category_hotels: one
+
+two:
+  name: 
+  desc: 
+  price: 
+  image: 
+  category_hotels: two

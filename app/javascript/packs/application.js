@@ -14,11 +14,13 @@ Turbolinks.start()
 ActiveStorage.start()
 require("jquery/src/jquery")
 
+import '../stylesheets/application';
 import "bootstrap"
 
 import "@fortawesome/fontawesome-free/js/all";
 import "./jquery_easing.js"
 
+require('admin-lte');
 require('isotope-layout')
 
 var jQueryBridget = require('jquery-bridget');

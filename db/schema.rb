@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_15_061614) do
+ActiveRecord::Schema.define(version: 2021_03_29_070620) do
+
+  create_table "category_hotels", charset: "utf8mb4", force: :cascade do |t|
+    t.string "category_name"
+    t.text "category_desc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "gallery_hotels", charset: "utf8mb4", force: :cascade do |t|
+    t.string "path"
+    t.bigint "hotels_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hotels_id"], name: "index_gallery_hotels_on_hotels_id"
+  end
+
+  create_table "hotels", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.text "desc"
+    t.string "price"
+    t.string "image"
+    t.integer "view"
+    t.integer "rating"
+    t.bigint "category_hotels_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_hotels_id"], name: "index_hotels_on_category_hotels_id"
+  end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "firstName"
@@ -20,6 +48,9 @@ ActiveRecord::Schema.define(version: 2021_03_15_061614) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "email", unique: true
   end
 
+  add_foreign_key "gallery_hotels", "hotels", column: "hotels_id"
+  add_foreign_key "hotels", "category_hotels", column: "category_hotels_id"
 end

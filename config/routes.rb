@@ -1,7 +1,9 @@
 
 Rails.application.routes.draw do
+  
   # articles: controller index page
   root "articles#index"
+  
   get "/articles", to: "articles#index"
   get "/khachsan", to: "articles#khachsan"
   get "/dichvu", to: "articles#dichvu"
@@ -16,4 +18,8 @@ Rails.application.routes.draw do
   get  "logout"   => "session#destroy"
   get "register"    => "users#new"
   resources :users
+
+  # admin space
+  get "/admin", to: "admin#index"
+  get 'category/category'
 end

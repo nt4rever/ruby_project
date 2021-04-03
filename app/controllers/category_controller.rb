@@ -31,11 +31,18 @@ class CategoryController < ApplicationController
   end
 
   def edit
-    @cate = CategoryHotel.find(params[:id])
+    @category = CategoryHotel.find(params[:id])
   end
 
   def update
-    
+    @category = CategoryHotel.find(params[:id])
+    if @category.update(cate_params)
+      flash[:success] = "Sửa danh mục thành công!"
+      redirect_to :controller => 'category', :action => 'category'
+    else
+      flash[:danger] = "Sửa danh mục thất bại!"
+      redirect_to :controller => 'category', :action => 'category'
+    end
   end
   
   

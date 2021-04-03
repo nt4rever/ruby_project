@@ -13,6 +13,7 @@
          <div class="card">
              <div class="card-header">
                  <a href="<%= new_category_path %>" class="btn btn-secondary">Thêm danh mục</a>
+
                  <div class="card-tools">
                      <div class="input-group input-group-sm" style="width: 150px;">
                          <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -61,7 +62,7 @@
                                  <a href="<%= delete_category_path(:id =>cate.id) %>" class="btn btn-sm btn-danger" onclick='return confirm("Xóa danh mục này!");'>
                                      <i class="fas fa-trash"></i>
                                  </a>
-                                  <a href="<%= edit_category_path(:id =>cate.id) %>" class="btn btn-sm btn-warning" onclick='return confirm("Sửa danh mục này!");'>
+                                 <a href="<%= edit_category_path(:id =>cate.id) %>" class="btn btn-sm btn-warning">
                                      <i class="fas fa-edit"></i>
                                  </a>
                              </td>

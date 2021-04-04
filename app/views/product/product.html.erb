@@ -1,4 +1,4 @@
- <h1 class="m-0 text-dark pb-2">Danh mục</h1>
+ <h1 class="m-0 text-dark pb-2">Sản phẩm</h1>
 
  <div class="card-body">
      <% flash.each do |key, value| %>
@@ -11,7 +11,7 @@
      <div class="col-12">
          <div class="card">
              <div class="card-header">
-                 <a href="<%= new_category_path %>" class="btn btn-outline-info">Thêm danh mục</a>
+                 <a href="<%= new_product_path %>" class="btn btn-outline-info">Thêm sản phẩm</a>
 
                  <div class="card-tools">
                      <div class="input-group input-group-sm" style="width: 150px;">
@@ -31,37 +31,45 @@
                      <thead>
                          <tr>
                              <th>id</th>
-                             <th>category_name</th>
-                             <th>category_desc</th>
-                             <th>created_at</th>
+                             <th>img</th>
+                             <th>name</th>
+                             <th>desc</th>
+                             <th>price</th>
+                             <th>category_id</th>
                              <th>updated_at</th>
                              <th>edit</th>
                          </tr>
                      </thead>
                      <tbody>
-                         <% if @all_category %>
-                         <% @all_category.each do |cate| %>
+                         <% if @all_product %>
+                         <% @all_product.each do |pro| %>
                          <tr>
                              <td>
-                                 <%= cate.id  %>
+                                 <%= pro.id  %>
                              </td>
                              <td>
-                                 <%= cate.category_name  %>
+                                 <%= image_tag(pro.image.url,style: "width:100px;", alt: 'Image') if pro.image? %>
                              </td>
                              <td>
-                                 <%= raw(cate.category_desc)  %>
+                                 <%= pro.name  %>
                              </td>
                              <td>
-                                 <%= cate.created_at  %>
+                                 <%= raw(pro.desc)  %>
                              </td>
                              <td>
-                                 <%= cate.updated_at %>
+                                 <%= pro.price  %>
                              </td>
                              <td>
-                                 <a href="<%= delete_category_path(:id =>cate.id) %>" class="btn btn-sm btn-outline-danger" onclick='return confirm("Xóa danh mục này!");'>
+                                 <%= pro.category_hotels_id  %>
+                             </td>
+                             <td>
+                                 <%= pro.updated_at %>
+                             </td>
+                             <td>
+                                 <a href="<%= delete_product_path(:id=>pro.id) %>" class="btn btn-sm btn-outline-danger" onclick='return confirm("Xóa danh mục này!");'>
                                      <i class="fas fa-trash"></i>
                                  </a>
-                                 <a href="<%= edit_category_path(:id =>cate.id) %>" class="btn btn-sm btn-outline-warning">
+                                 <a href="<%= edit_product_path(:id=>pro.id) %>" class="btn btn-sm btn-outline-warning">
                                      <i class="fas fa-edit"></i>
                                  </a>
                              </td>

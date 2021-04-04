@@ -1,0 +1,58 @@
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-8">
+        <!-- general form elements -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Thêm sản phẩm</h3>
+            </div>
+            <section class="content" style="min-height: auto;display: flex;justify-content: center;">
+                <% flash.each do |key, value| %>
+                <div class="row">
+                    <div class="alert alert-<%= key %>">
+                        <%= value %>
+                    </div>
+                </div>
+                <% end %>
+            </section>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <%= form_for:product,url: create_product_path do |f| %>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="name">Tên sản phẩm</label>
+                    <%=f.text_field :name, class:'form-control', required: 'true' %>
+                </div>
+                <div class="form-group">
+                    <label for="price">Giá</label>
+                    <%=f.number_field :price, class:'form-control', required: 'true' %>
+                </div>
+                <div class="form-group">
+                    <label for="category">Danh mục</label>
+                    <%=f.collection_select(:category_hotels_id ,@all_category,:id,:category_name, {:prompt=>true},{:class=>'form-control',:required =>'true'}) %>
+                </div>
+                <div class="form-group">
+                    <label for="image">Ảnh</label>
+                    <%= f.file_field :image, class: 'form-control', required: 'true' %>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Mô tả</label>
+                    <div class='field'><%= f.text_area :desc, class: 'ckeditor' %></div>
+                </div>
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <%= f.submit "Submit", class: 'btn btn-primary' %>
+            </div>
+            <% end %>
+        </div>
+        <!-- /.card -->
+
+
+    </div>
+    <!-- /.card -->
+</div>
+<!--/.col (right) -->
+</div>

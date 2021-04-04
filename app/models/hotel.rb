@@ -1,3 +1,4 @@
 class Hotel < ApplicationRecord
-  belongs_to :category_hotels
+  mount_uploader :image, ImageUploader
+  # belongs_to :category_hotel
 end

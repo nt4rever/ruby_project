@@ -28,6 +28,13 @@ Rails.application.routes.draw do
        get 'delete_category', to: 'category#destroy'
        get 'edit_category', to: 'category#edit'
        post 'update_category', to: 'category#update'
+
+       get 'product', to: 'product#product'
+       get 'new_product', to: 'product#new'
+       post 'create_product', to: 'product#create'
+       get 'delete_product', to: 'product#destroy'
+       get 'edit_product', to: 'product#edit'
+       post 'update_product', to: 'product#update'
   end
   
 end

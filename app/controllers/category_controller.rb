@@ -45,8 +45,6 @@ class CategoryController < ApplicationController
     end
   end
   
-  
-  
   private
     def cate_params
       params.require(:category).permit :category_name, :category_desc

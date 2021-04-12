@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Đây là dự án ruby on rails của nhóm Tân - Trúc Ly - Hương Giang
+Cài đặt dự án:
 
-Things you may want to cover:
+* yarn add bootstrap jquery popper.js
 
-* Ruby version
+* yarn add @fortawesome/fontawesome-free
 
-* System dependencies
+* rake db:create
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* rake db:migrate
 
 * ...
+

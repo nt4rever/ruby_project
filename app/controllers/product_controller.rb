@@ -1,7 +1,7 @@
 class ProductController < ApplicationController
     layout 'admin_layout'
     def product 
-        @all_product = Hotel.all 
+        @pagy, @all_product = pagy(Hotel.all.order(id: :desc), items: 5) 
     end
 
     def new

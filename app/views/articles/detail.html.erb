@@ -1,485 +1,416 @@
-
-    <div class="wrapper">
-        <header>
-            <nav
-                class="nav_Bar container navbar navbar-expand-lg navbar-primary|secondary|success|danger|warning|info|light|dark bg-primary|secondary|success|danger|warning|info|light|dark">
-                <a class="navbar-brand logo_tieude" href="<%= root_path %>">LangCoBeach</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fa fa-bars icon_bar"></i></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="<%= root_path %>">TRANG CHỦ <span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="<%= khachsan_path %>">KHÁCH SẠN</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<%= dichvu_path %>">DỊCH VỤ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href=".<%= tintuc_path %>">TIN TỨC</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<%= gioithieu_path %>">GIỚI THIỆU</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<%= lienhe_path %>">LIÊN HỆ</a>
-                        </li>
-                        <li class="nav-item search_nav_cha">
-                            <div class="search">
+<div class="wrapper">
+    <header>
+        <nav class="nav_Bar container navbar navbar-expand-lg navbar-primary|secondary|success|danger|warning|info|light|dark bg-primary|secondary|success|danger|warning|info|light|dark">
+            <a class="navbar-brand logo_tieude" href="<%= root_path %>">LangCoBeach</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa fa-bars icon_bar"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= root_path %>">TRANG CHỦ <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="<%= khachsan_path %>">KHÁCH SẠN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=".<%= tintuc_path %>">TIN TỨC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= gioithieu_path %>">GIỚI THIỆU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= lienhe_path %>">LIÊN HỆ</a>
+                    </li>
+                    <li class="nav-item search_nav_cha">
+                        <div class="search">
+                            <div class="nav-link">
+                                <span>Search</span>
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="form_search_navbar flex-row">
+                            <input type="text" name="" id="" class="form-control">
+                            <div class="icon_search_navbar">
+                                <button type="submit" class="form-control"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../html/giohang.html">
+                            <div class="giohang">
                                 <div class="nav-link">
-                                    <span>Search</span>
-                                    <i class="fa fa-search"></i>
+                                    <span>0đ</span>
+                                    <i class="fa fa-shopping-bag"></i>
                                 </div>
                             </div>
-                            <div class="form_search_navbar flex-row">
-                                <input type="text" name="" id="" class="form-control">
-                                <div class="icon_search_navbar">
-                                    <button type="submit" class="form-control"><i class="fa fa-search"></i></button>
-                                </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <% if  session[:username] %>
+                        <%= link_to 'logout' , :action=> 'go' do %>
+                        <div class="giohang dangnhap">
+                            <div class="nav-link">
+                                <span id="username"> <%= session[:username] %></span>
+                                <i class="fas fa-sign-out-alt"></i>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../html/giohang.html">
-                                <div class="giohang">
-                                    <div class="nav-link">
-                                        <span>0đ</span>
-                                        <i class="fa fa-shopping-bag"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <% if  session[:username] %>
-                            <%= link_to 'logout' , :action=> 'go' do %>
-                            <div class="giohang dangnhap">
-                                <div class="nav-link">
-                                    <span id="username"> <%= session[:username] %></span>
-                                    <i class="fas fa-sign-out-alt"></i>
-                                </div>
+                        </div>
+                        <% end %>
+                        <% else %>
+                        <%= link_to 'login' , :action=> 'go' do %>
+                        <div class="giohang dangnhap">
+                            <div class="nav-link">
+                                <span id="username"> Login</span>
+                                <i class="fas fa-sign-in-alt"></i>
                             </div>
-                            <% end %>
-                            <% else %>
-                            <%= link_to 'login' , :action=> 'go' do %>
-                            <div class="giohang dangnhap">
-                                <div class="nav-link">
-                                    <span id="username"> Login</span>
-                                    <i class="fas fa-sign-in-alt"></i>
-                                </div>
-                            </div>
-                            <% end %>
-                            <% end %>
-                        </li>
-                    </ul>
+                        </div>
+                        <% end %>
+                        <% end %>
+                    </li>
+                </ul>
 
-                </div>
-            </nav>
-        </header>
-        <!-- Ket thuc header -->
-        <div class="dieuhuong">
-            <div class="container">
-                <div class="trai col-lg-6">
-                    <span class="trai1"><a href="<%= root_path %>">TRANG CHỦ</a></span>
-                    <span class="trai2">/</span>
-                    <span class="trai3">KHÁCH SẠN</span>
-                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Ket thuc header -->
+    <div class="dieuhuong">
+        <div class="container">
+            <div class="trai col-lg-6">
+                <span class="trai1"><a href="<%= root_path %>">TRANG CHỦ</a></span>
+                <span class="trai2">/</span>
+                <span class="trai3">KHÁCH SẠN</span>
             </div>
         </div>
-
-        <div class="maindt">
-            <div class="container">
-                <div class="row">
-                    <div class="sec_trai col-lg-7">
-                        <%= image_tag "img/angsana.jpg" %>
-                    </div>
-                    <div class="sec_phai col-lg-5">
-                        <div class="tieude">
-                            <h3>Angsana Lang Co</h3>
-                        </div>
-                        <div class="is-divider small"></div>
-                        <div class="gia">
-                            <h4>Chỉ từ 2,999,000 ₫</h4>
-                        </div>
-                        <div class="gioithieu">
-                            <p>
-                                <strong>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co.</strong>
-                                Angsana Lang Co là resort hiện đại với nội thất đầy phong cách. Các chỗ nghỉ lắp
-                                máy điều hòa tại đây được cung cấp Wi-Fi miễn phí. Resort này có 2 nhà hàng và 1
-                                quầy bar cũng như spa và hồ bơi ngoài trời.
-                            </p>
-                        </div>
-                        <div class="datngay1">
-                            <input type="button" value="ĐẶT NGAY" class="btn btn-danger" data-toggle="modal"
-                                data-target="#myModal">
-                            <input type="button" value="THÊM VÀO GIỎ HÀNG" class="btn btn-outline-success"
-                                data-toggle="modal" data-target="#myModal1">
-                        </div>
-                        <hr>
-                        <div class="ghichu">
-                            <p class="text-muted">Danh mục: khách sạn</p>
-                        </div>
-                        <div class="lienket">
-                            <p class="iconf">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"> <i class="fab fa-facebook"></i></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fab fa-instagram-square"></i></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fab fa-twitter-square"></i></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fab fa-pinterest"></i></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-            </div>
-        </div>
-        <!-- The Modal -->
-        <div class="modal fade" id="myModal1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Đã thêm vào giỏ hàng</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <a href="../../../html/giohang.html">Đi đến giỏ hàng</a>
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Vui lòng nhập thông tin của bạn</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <p>Tên của bạn</p>
-                        <input type="text" class="form-control">
-                        <br>
-                        <p>Email</p>
-                        <input type="email" name="" id="" class="form-control">
-                        <br>
-                        <p>Số điện thoại</p>
-                        <input type="number" name="" id="" class="form-control">
-                        <br>
-                        <p>Ghi chú</p>
-                        <input type="text" class="form-control">
-                        <br>
-                        <input type="button" value="Gửi đi" class="btn btn-success">
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-                <hr>
-            </div>
-        </div>
-
-
-        <div class="thongtin">
-            <div class="container">
-                <div class="bon_nut">
-                    <ul class="list-unstyled">
-                        <li class="active"><b class="btn btn-outline-warning">Mô tả</b></li>
-                        <li><b class="btn btn-outline-warning">Thông tin bổ sung</b></li>
-                        <li><b class="btn btn-outline-warning" id="danhgia"></i>Đánh giá</b></li>
-                    </ul>
-                </div>
-                <div class="bon_nd">
-                    <ul class="list-unstyled">
-                        <li class="hien_len">
-                            <div class="moi_dung">
-                                <p>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co
-                                    Angsana Lang Co là resort hiện đại với nội thất đầy phong cách. Các chỗ nghỉ lắp
-                                    máy
-                                    điều hòa tại đây được cung cấp Wi-Fi miễn phí. Resort này có 2 nhà hàng và 1
-                                    quầy
-                                    bar cũng như spa và hồ bơi ngoài trời.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="moi_dung">
-                                <p>
-                                    Các phòng, suite và loft rộng rãi tại đây được trang bị TV truyền hình vệ tinh
-                                    màn
-                                    hình phẳng cùng đầu đĩa DVD. Các phòng tắm riêng có bồn tắm, máy sấy tóc, áo
-                                    choàng
-                                    tắm và đồ vệ sinh cá nhân miễn phí. Các suite cũng như loft đi kèm với bếp nhỏ
-                                    và
-                                    khu vực sinh hoạt rộng rãi.
-                                    <br>
-
-                                    Kinh thành Huế cách Angsana Lang Co 1 tiếng 30 phút lái xe. Từ chỗ nghỉ này, du
-                                    khách chỉ cần đi xe 2 tiếng là đến khu phố cổ Hội An, di sản thế giới đã được
-                                    UNESCO
-                                    công nhận và những ngọn đồi lịch sử của Thánh địa Mỹ Sơn. Sân bay Huế và Sân bay
-                                    Đà
-                                    Nẵng cách đó lần lượt 44 km và 60 km.
-                                    <br>
-
-                                    Du khách có thể tận hưởng các liệu pháp mát-xa thư giãn hay rèn luyện sức
-                                    khỏe
-                                    tại trung tâm thể dục. Tại đây cũng có các hoạt động thể thao dưới nước. Quầy lễ
-                                    tân
-                                    hoạt động 24 giờ của resort cung cấp tiện nghi để hành lý và két an toàn. Dịch
-                                    vụ
-                                    giặt ủi được bố trí kèm phụ phí.
-                                    <br>
-
-                                    Ẩm thực châu Á được phục vụ tại nhà hàng chính của resort, nơi du khách có thể
-                                    ăn
-                                    uống trong nhà và ngoài trời. Quán Rice Bar cung cấp thực đơn phong phú với đồ
-                                    uống
-                                    và các món ăn được chế biến từ gạo. Moomba là nhà hàng bình dị bên bãi biển cung
-                                    cấp
-                                    món tapas và là nơi khách có thể đến để khiêu vũ.
-                                    <br>
-
-                                    Các cặp đôi đặc biệt thích địa điểm này — họ cho điểm 8,4 cho kỳ nghỉ dành cho 2
-                                    người.
-                                    <br>
-
-                                    Chúng tôi sử dụng ngôn ngữ của bạn!</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="moi_dung">
-                                <div class="box_cmt">
-                                    <div class="cmt">
-                                        <div class="toast" data-autohide="false">
-                                            <div class="toast-header">
-                                                <strong class="mr-auto text-primary">Lê Văn tân</strong>
-                                                <small class="text-muted">5 mins ago</small>
-                                                <button type="button" class="ml-2 mb-1 close"
-                                                    data-dismiss="toast">&times;</button>
-                                            </div>
-                                            <div class="toast-body">
-                                                Tốt!!!!!
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cmt">
-                                        <div class="toast" data-autohide="false">
-                                            <div class="toast-header">
-                                                <strong class="mr-auto text-primary">Lê Văn tân</strong>
-                                                <small class="text-muted">5 mins ago</small>
-                                                <button type="button" class="ml-2 mb-1 close"
-                                                    data-dismiss="toast">&times;</button>
-                                            </div>
-                                            <div class="toast-body">
-                                                Tốt!!!!!
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cmt">
-                                        <div class="toast" data-autohide="false">
-                                            <div class="toast-header">
-                                                <strong class="mr-auto text-primary">Lê Văn tân</strong>
-                                                <small class="text-muted">5 mins ago</small>
-                                                <button type="button" class="ml-2 mb-1 close"
-                                                    data-dismiss="toast">&times;</button>
-                                            </div>
-                                            <div class="toast-body">
-                                                dịch vu rất Tốt!!!!!
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box_danhgia">
-                                    <p>Thêm đánh giá:</p>
-                                    <input type="text" name="" id="cmt_text" class="form-control">
-                                    <button type="button" class="btn_danhgia btn btn-outline-primary">Gửi đi</button>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="hinhanh container detail_slide">
-            <h3 class="text-center">Thư viện ảnh</h3>
-            <div class="carousel" data-flickity='{ "autoPlay": true }'>
-
-                <div class="carousel-cell">
-                    <%= image_tag "img/angsana2.jpg" %>
-                    <!-- <img src="../img/angsana2.jpg" alt=""> -->
-                </div>
-                <div class="carousel-cell">
-                      <%= image_tag "img/angsana.jpg" %>
-                    <!-- <img src="../img/angsana.jpg" alt=""> -->
-                </div>
-                <div class="carousel-cell">
-                     <%= image_tag "img/angsana3.jpg" %>
-                    <!-- <img src="../img/angsana3.jpg" alt=""> -->
-                </div>
-            </div>
-        </div>
-
-        <div class="othersp">
-            <div class="container">
-                <div class="tieude">
-                    <h3>SẢN PHẨM TƯƠNG TỰ</h3>
-                </div>
-                <div class="sanpham">
-                    <div class="khoisp">
-                        <div class="anh">
-                              <%= image_tag "img/ks/langcobechressort.jpg" %>
-                        </div>
-                        <div class="chitiet">
-                            <p class="text-muted location">KHÁCH SẠN</p>
-                            <a href="<%= detail_path %>">
-                                <p class="text-dark title">Lang Co Beach Resort </p>
-                            </a>
-                            <p class="gia">
-                                <!-- <span class="text-primary truoc"><strike>1,500</strike></span> -->
-                                <span class="text-primary sau">2,999,000 đ</span></p>
-                            <p class="gioithieu">
-                                Với hồ bơi đẹp và rộng rãi ngoài trời cùng khu vực bãi biển riêng, Lang Co Beach
-                                Resort mang lại cho du khách một kỳ nghỉ thư giãn ở thị trấn Lăng Cô. Nơi nghỉ
-                                này còn có 2 nhà hàng, dịch vụ mát-xa và truy cập Wi-Fi miễn phí.
-                                <br>
-                                <strong>Lang Co Beach Resort đã chào đón khách từ Ngày 29 Tháng 10 Năm
-                                    2013.</strong>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="khoisp">
-                        <div class="anh">
-                              <%= image_tag "img/ks/langcobechressort.jpg" %>
-                        </div>
-                        <div class="chitiet">
-                            <p class="text-muted location">KHÁCH SẠN</p>
-                            <a href="<%= detail_path %>">
-                                <p class="text-dark title">Thanh Tam Resort</p>
-                            </a>
-                            <p class="gia">
-                                <!-- <span class="text-primary truoc"><strike>1,500</strike></span> -->
-                                <span class="text-primary sau">2,999,000 đ</span></p>
-                            <p class="gioithieu">
-                                Thanh Tâm Resort tọa lạc tại thị trấn Lăng Cô, cách Bãi biển Lăng Cô xinh đẹp
-                                chỉ vài bước. Nơi đây có khu vực bãi biển riêng, truy cập Wi-Fi miễn phí và các
-                                phòng đầy đủ tiện nghi.
-                                <br>
-                                <Strong>Thanh Tam Resort đã chào đón khách từ Ngày 21 Tháng 3 Năm 2014.</Strong>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="khoisp">
-                        <div class="anh">
-                              <%= image_tag "img/ks/langcobechressort.jpg" %>
-                        </div>
-                        <div class="chitiet">
-                            <p class="text-muted location">KHÁCH SẠN</p>
-                            <a href="<%= detail_path %>">
-                                <p class="text-dark title">Beach Resort Hawaii Khuyến Mãi Mùa Đông</p>
-                            </a>
-                            <p class="gia">
-                                <!-- <span class="text-primary truoc"><strike>1,500</strike></span> -->
-                                <span class="text-primary sau">2,999,000 đ</span></p>
-                            <p class="gioithieu">
-                                <strong>Khách sạn Victoria Hawaii Beach Resort</strong>
-                                &nbsp;gồm 57 bungalows được thiết kế theo phong cách những ngôi nhà mái
-                                tranh
-                                mộc
-                                mạc ở miền quê ẩn mình trong khu vườn nhiệt đới quyến rũ.
-                            </p>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-                <footer>
-            <div class="tren">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 sec1">
-                            <h3>Lang Co beach</h3>
-                            <p>Mã số thuế: 031422xxx</p>
-                            <p>Ngày cấp giấy phép: 01/01/2019</p>
-                            <p>Ngày hoạt động: 01/01/2019</p>
-                        </div>
-                        <div class="col-lg-3 sec2">
-                            <div class="tieude">
-                                <h4>Liên Hệ</h4>
-                            </div>
-                            <div class="noidung">
-                                <p><i class="fa fa-map-marker"></i><span> Trường đại học CNTT và TT Việt Hàn</span>
-                                </p>
-                                <p><i class="fa fa-phone"></i><span> 0336757208</span></p>
-                                <p><i class="fa fa-envelope"></i><span> levantanald@gmail.com</span></p>
-                                <p class="iconf">
-                                    <a href="" data-toggle="tooltip" data-placement="bottom" title="Facebook"> <i class="fab fa-facebook"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fab fa-instagram"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fab fa-twitter"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fab fa-pinterest"></i></a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 sec3">
-                            <div class="tieude">
-                                <h4>Tin tức</h4>
-                            </div>
-                            <div class="noidung">
-                                <ul>
-                                    <li><a href="">Bản tin du lịch Việt</a></li>
-                                    <li><a href="">Cẩm nang du lịch</a></li>
-                                    <li><a href="">Tư vấn du lịch</a></li>
-                                    <li><a href="">Tuyển dụng du lịch</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 sec4">
-                            <div class="tieude">
-                                <h4>Tour phổ biến</h4>
-                            </div>
-                            <div class="noidung">
-                                <%= image_tag "img/footter.png" %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="duoi">
-                <p>© All rights reserved. Thiết kế website NT_4rever</p>
-            </div>
-        </footer>
-
-
-        <!-- end main -->
     </div>
 
+    <div class="maindt">
+        <div class="container">
+            <div class="row">
+                <div class="sec_trai col-lg-7">
+                    <%= image_tag(@product.image.url, alt: 'Image') if @product.image? %>
+                </div>
+                <div class="sec_phai col-lg-5">
+                    <div class="tieude">
+                        <h3><%= @product.name %></h3>
+                    </div>
+                    <div class="is-divider small"></div>
+                    <div class="gia">
+                        <h4><%= number_to_currency(@product.price, unit: "đ",format: "%n %u", precision: 0)  %></h4>
+                    </div>
+                    <div class="gioithieu">
+                        <%= raw(@product.desc)%>
+                    </div>
+                    <div class="datngay1">
+                        <input type="button" value="ĐẶT NGAY" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                        <input type="button" value="THÊM VÀO GIỎ HÀNG" class="btn btn-outline-success" data-toggle="modal" data-target="#myModal1">
+                    </div>
+                    <hr>
+                    <div class="ghichu">
+                        <p class="text-muted">Danh mục: khách sạn</p>
+                    </div>
+                    <div class="lienket">
+                        <p class="iconf">
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"> <i class="fab fa-facebook"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fab fa-instagram-square"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Đã thêm vào giỏ hàng</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <a href="../../../html/giohang.html">Đi đến giỏ hàng</a>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Vui lòng nhập thông tin của bạn</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <p>Tên của bạn</p>
+                    <input type="text" class="form-control">
+                    <br>
+                    <p>Email</p>
+                    <input type="email" name="" id="" class="form-control">
+                    <br>
+                    <p>Số điện thoại</p>
+                    <input type="number" name="" id="" class="form-control">
+                    <br>
+                    <p>Ghi chú</p>
+                    <input type="text" class="form-control">
+                    <br>
+                    <input type="button" value="Gửi đi" class="btn btn-success">
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+            <hr>
+        </div>
+    </div>
+
+
+    <div class="thongtin">
+        <div class="container">
+            <div class="bon_nut">
+                <ul class="list-unstyled">
+                    <li class="active"><b class="btn btn-outline-warning">Mô tả</b></li>
+                    <li><b class="btn btn-outline-warning">Thông tin bổ sung</b></li>
+                    <li><b class="btn btn-outline-warning" id="danhgia"></i>Đánh giá</b></li>
+                </ul>
+            </div>
+            <div class="bon_nd">
+                <ul class="list-unstyled">
+                    <li class="hien_len">
+                        <div class="moi_dung">
+                            <%= raw(@product.desc)%>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="moi_dung">
+                            <p>
+                                Các phòng, suite và loft rộng rãi tại đây được trang bị TV truyền hình vệ tinh
+                                màn
+                                hình phẳng cùng đầu đĩa DVD. Các phòng tắm riêng có bồn tắm, máy sấy tóc, áo
+                                choàng
+                                tắm và đồ vệ sinh cá nhân miễn phí. Các suite cũng như loft đi kèm với bếp nhỏ
+                                và
+                                khu vực sinh hoạt rộng rãi.
+                                <br>
+
+                                Kinh thành Huế cách Angsana Lang Co 1 tiếng 30 phút lái xe. Từ chỗ nghỉ này, du
+                                khách chỉ cần đi xe 2 tiếng là đến khu phố cổ Hội An, di sản thế giới đã được
+                                UNESCO
+                                công nhận và những ngọn đồi lịch sử của Thánh địa Mỹ Sơn. Sân bay Huế và Sân bay
+                                Đà
+                                Nẵng cách đó lần lượt 44 km và 60 km.
+                                <br>
+
+                                Du khách có thể tận hưởng các liệu pháp mát-xa thư giãn hay rèn luyện sức
+                                khỏe
+                                tại trung tâm thể dục. Tại đây cũng có các hoạt động thể thao dưới nước. Quầy lễ
+                                tân
+                                hoạt động 24 giờ của resort cung cấp tiện nghi để hành lý và két an toàn. Dịch
+                                vụ
+                                giặt ủi được bố trí kèm phụ phí.
+                                <br>
+
+                                Ẩm thực châu Á được phục vụ tại nhà hàng chính của resort, nơi du khách có thể
+                                ăn
+                                uống trong nhà và ngoài trời. Quán Rice Bar cung cấp thực đơn phong phú với đồ
+                                uống
+                                và các món ăn được chế biến từ gạo. Moomba là nhà hàng bình dị bên bãi biển cung
+                                cấp
+                                món tapas và là nơi khách có thể đến để khiêu vũ.
+                                <br>
+
+                                Các cặp đôi đặc biệt thích địa điểm này — họ cho điểm 8,4 cho kỳ nghỉ dành cho 2
+                                người.
+                                <br>
+
+                                Chúng tôi sử dụng ngôn ngữ của bạn!</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="moi_dung">
+                            <div class="box_cmt">
+                                <div class="cmt">
+                                    <div class="toast" data-autohide="false">
+                                        <div class="toast-header">
+                                            <strong class="mr-auto text-primary">Lê Văn tân</strong>
+                                            <small class="text-muted">5 mins ago</small>
+                                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+                                        </div>
+                                        <div class="toast-body">
+                                            Tốt!!!!!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cmt">
+                                    <div class="toast" data-autohide="false">
+                                        <div class="toast-header">
+                                            <strong class="mr-auto text-primary">Lê Văn tân</strong>
+                                            <small class="text-muted">5 mins ago</small>
+                                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+                                        </div>
+                                        <div class="toast-body">
+                                            Tốt!!!!!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cmt">
+                                    <div class="toast" data-autohide="false">
+                                        <div class="toast-header">
+                                            <strong class="mr-auto text-primary">Lê Văn tân</strong>
+                                            <small class="text-muted">5 mins ago</small>
+                                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+                                        </div>
+                                        <div class="toast-body">
+                                            dịch vu rất Tốt!!!!!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box_danhgia">
+                                <p>Thêm đánh giá:</p>
+                                <input type="text" name="" id="cmt_text" class="form-control">
+                                <button type="button" class="btn_danhgia btn btn-outline-primary">Gửi đi</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <% if @product.thuvienanh %>
+
+    <div class="hinhanh container detail_slide">
+        <h3 class="text-center">Thư viện ảnh</h3>
+        <div class="carousel" data-flickity='{ "autoPlay": true }'>
+            <% @product.thuvienanh.path.each do |p| %>
+            <div class="carousel-cell">
+                 <%= image_tag(p.url, alt: 'Image') %>
+            </div>
+             <% end %>
+            
+        </div>
+    </div>
+
+    <% end %>
+
+    <div class="othersp">
+        <div class="container">
+            <div class="tieude">
+                <h3>SẢN PHẨM TƯƠNG TỰ</h3>
+            </div>
+            <div class="sanpham">
+                <% if @product.danhmuc.sanpham
+                        @relative = @product.danhmuc.sanpham.limit(4)
+                 %>
+                <% @relative.each do |item| %>
+                <% if @product.id != item.id %>
+                <div class="khoisp">
+                    <div class="anh">
+                        <%= image_tag(item.image.url, alt: 'Image') if item.image? %>
+                    </div>
+                    <div class="chitiet">
+                        <p class="text-muted location"><%= item.danhmuc.category_name %></p>
+                        <a href="<%= detail_path(:id => item.id) %>">
+                            <p class="text-dark title"><%= item.name %></p>
+                        </a>
+                        <p class="gia">
+                            <!-- <span class="text-primary truoc"><strike>1,500</strike></span> -->
+                            <span class="text-primary sau"><%= number_to_currency(item.price, unit: "đ",format: "%n %u", precision: 0)  %></span></p>
+                        <p class="gioithieu">
+                            <%= raw(item.desc)%>
+                        </p>
+                    </div>
+                </div>
+                <% end %>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="tren">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 sec1">
+                        <h3>Lang Co beach</h3>
+                        <p>Mã số thuế: 031422xxx</p>
+                        <p>Ngày cấp giấy phép: 01/01/2019</p>
+                        <p>Ngày hoạt động: 01/01/2019</p>
+                    </div>
+                    <div class="col-lg-3 sec2">
+                        <div class="tieude">
+                            <h4>Liên Hệ</h4>
+                        </div>
+                        <div class="noidung">
+                            <p><i class="fa fa-map-marker"></i><span> Trường đại học CNTT và TT Việt Hàn</span>
+                            </p>
+                            <p><i class="fa fa-phone"></i><span> 0336757208</span></p>
+                            <p><i class="fa fa-envelope"></i><span> levantanald@gmail.com</span></p>
+                            <p class="iconf">
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="Facebook"> <i class="fab fa-facebook"></i></a>
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 sec3">
+                        <div class="tieude">
+                            <h4>Tin tức</h4>
+                        </div>
+                        <div class="noidung">
+                            <ul>
+                                <li><a href="">Bản tin du lịch Việt</a></li>
+                                <li><a href="">Cẩm nang du lịch</a></li>
+                                <li><a href="">Tư vấn du lịch</a></li>
+                                <li><a href="">Tuyển dụng du lịch</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 sec4">
+                        <div class="tieude">
+                            <h4>Tour phổ biến</h4>
+                        </div>
+                        <div class="noidung">
+                            <%= image_tag "img/footter.png" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="duoi">
+            <p>© All rights reserved. Thiết kế website NT_4rever</p>
+        </div>
+    </footer>
+
+
+    <!-- end main -->
 </div>
-<span  class="btn_top_a">
+
+</div>
+<span class="btn_top_a">
     <div class="btn_top" id="btn_top">
         <i class="fa fa-arrow-up"></i>
     </div>
 </span>
-    <%= javascript_pack_tag 'index' %>
-    <%= javascript_pack_tag 'detail' %>
-    <%= javascript_pack_tag 'flickity' %>
-
+<%= javascript_pack_tag 'index' %>
+<%= javascript_pack_tag 'detail' %>
+<%= javascript_pack_tag 'flickity' %>

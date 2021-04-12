@@ -1,0 +1,59 @@
+ <h1 class="m-0 text-dark pb-2">Thư viện ảnh sản phẩm</h1>
+
+ <div class="card-body">
+     <% flash.each do |key, value| %>
+     <div class="callout callout-<%= key %>">
+         <p><%= value %></p>
+     </div>
+     <% end %>
+ </div>
+ <div class="row">
+     <div class="col-12">
+         <div class="card">
+             <div class="card-header">
+                 <a href="<%= new_gallery_path(:id => params[:id]) %>" class="btn btn-outline-info">Thêm ảnh sản phẩm</a>
+                 <div class="card-tools">
+                     <div class="input-group input-group-sm" style="width: 150px;">
+                         <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                         <div class="input-group-append">
+                             <button type="submit" class="btn btn-default">
+                                 <i class="fas fa-search"></i>
+                             </button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <!-- /.card-header -->
+             <div class="card-body table-responsive p-0" style="height: 400px;">
+                 <table class="table table-head-fixed text-nowrap">
+                     <thead>
+                         <tr>
+                             <th>img</th>
+                             <th>edit</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <% if @gallery %>
+                         <% @gallery.each do |item| %>
+                         
+                                 <% item.path.each do |p| %>
+                                 <tr>
+                             <td>
+                                 <%= image_tag(p.url,style: "width:300px;", alt: 'Image') %>
+                                  </td>
+                                 <% end %>
+                            
+                         </tr>
+                         <% end %>
+                         <% end %>
+
+                     </tbody>
+                 </table>
+             </div>
+
+             <!-- /.card-body -->
+         </div>
+         <!-- /.card -->
+     </div>
+ </div>

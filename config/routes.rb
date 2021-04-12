@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   
   get "/articles", to: "articles#index"
   get "/khachsan", to: "articles#khachsan"
-  get "/dichvu", to: "articles#dichvu"
   get "/detail", to: "articles#detail"
   get "/tintuc", to: "articles#tintuc"
   get "/gioithieu", to: "articles#gioithieu"
@@ -35,6 +34,10 @@ Rails.application.routes.draw do
        get 'delete_product', to: 'product#destroy'
        get 'edit_product', to: 'product#edit'
        post 'update_product', to: 'product#update'
+
+       get 'gallery', to: 'gallery#show'
+       get 'new_gallery', to: 'gallery#new'
+       post 'create_gallery', to: 'gallery#create'
   end
   
 end

@@ -1,0 +1,43 @@
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-8">
+        <!-- general form elements -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Thêm ảnh sản phẩm</h3>
+            </div>
+            <section class="content" style="min-height: auto;display: flex;justify-content: center;">
+                <% flash.each do |key, value| %>
+                <div class="row">
+                    <div class="alert alert-<%= key %>">
+                        <%= value %>
+                    </div>
+                </div>
+                <% end %>
+            </section>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <%= form_for:gallery ,url: create_gallery_path(:id=>params[:id]) do |f| %>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="image">Ảnh</label>
+                    <%= f.file_field :path, multiple: true, class: 'form-control', required: 'true' %>
+                    <%= f.hidden_field :hotels_id, value: params[:id] %>
+                </div>
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <%= f.submit "Submit", class: 'btn btn-primary' %>
+            </div>
+            <% end %>
+        </div>
+        <!-- /.card -->
+
+
+    </div>
+    <!-- /.card -->
+</div>
+<!--/.col (right) -->
+</div>

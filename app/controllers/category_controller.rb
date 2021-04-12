@@ -1,7 +1,7 @@
 class CategoryController < ApplicationController
   layout 'admin_layout'
   def category
-    @all_category = CategoryHotel.all
+    @pagy, @all_category = pagy(CategoryHotel.all, items: 10)
   end
 
   def new

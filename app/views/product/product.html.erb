@@ -1,4 +1,4 @@
- <h1 class="m-0 text-dark pb-2">Sản phẩm</h1>
+ <h1 class="m-0 text-dark ">Sản phẩm</h1>
 
  <div class="card-body">
      <% flash.each do |key, value| %>
@@ -33,7 +33,6 @@
                              <th>id</th>
                              <th>img</th>
                              <th>name</th>
-                             <th>desc</th>
                              <th>price</th>
                              <th>category_id</th>
                              <th>updated_at</th>
@@ -52,9 +51,6 @@
                              </td>
                              <td>
                                  <%= pro.name  %>
-                             </td>
-                             <td class="text-wrap">
-                                 <%= raw(pro.desc)  %>
                              </td>
                              <td>
                                  <%= number_to_currency(pro.price, unit: "đ",format: "%n %u", precision: 0)  %>

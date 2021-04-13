@@ -19,7 +19,11 @@ Rails.application.routes.draw do
   resources :users
 
   # admin space
-  get "admin", to: "admin#index"
+  get "admin", to: "admin_session#new"
+  post "admin_login", to: "admin_session#login"
+  get "admin_logout", to: "admin_session#destroy"
+  get "dashboard", to: "admin#index"
+
   scope 'admin' do
        get 'category', to: 'category#category'
        get 'new_category', to: 'category#new'

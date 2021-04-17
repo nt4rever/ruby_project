@@ -1,6 +1,6 @@
 # README
 
-Đây là dự án ruby on rails của nhóm Tân - Trúc Ly - Hương Giang
+Đây là dự án ruby on rails của nhóm Tân - Trúc Ly - Hương Giang \n
 Cài đặt dự án:
 
 * yarn add bootstrap jquery popper.js

@@ -11,7 +11,7 @@ Cài đặt dự án:
 * rake db:create
 
 * rake db:migrate
-* 
+
 * //
 * export sql mysqldump -u [username] -p [database name] > [database name].sql
 * import sql mysql -u [username] -p newdatabase < [database name].sql

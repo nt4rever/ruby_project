@@ -16,6 +16,11 @@ class ArticlesController < ApplicationController
   end
   def tintuc
   end
+
+  # def tintuc_chitiet
+
+  # end 
+
   def gioithieu
   end
   def lienhe

@@ -11,14 +11,14 @@ class AdminSessionController < ApplicationController
         if user && user.authenticate(params[:admin_login][:password]) && user.role== 'admin'
             session[:admin] = user.lastName
             redirect_to dashboard_path
-          else
+        else
             flash[:danger] = "Email hoặc mật khẩu không đúng!"
             render :new
-          end
+        end
     end
 
     def destroy
         session.delete(:admin)
         redirect_to :root 
-      end
+    end
 end

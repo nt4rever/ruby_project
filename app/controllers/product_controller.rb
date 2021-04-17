@@ -1,15 +1,18 @@
 class ProductController < ApplicationController
     layout 'admin_layout'
-    def product 
+    def product
+        check_session 
         @pagy, @all_product = pagy(Hotel.all.order(id: :desc), items: 5) 
     end
 
     def new
+        check_session
         @all_category = CategoryHotel.all
         @product = Hotel.new
     end
 
     def create
+        check_session
         @product = Hotel.create(product_params)
         if @product.save
             flash[:success] = "Thêm sản phẩm thành công!"
@@ -22,6 +25,7 @@ class ProductController < ApplicationController
     end
     
     def destroy 
+        check_session
         @product = Hotel.find(params[:id])
         if @product.destroy
             flash[:success] = "Xóa sản phẩm thành công!"
@@ -33,11 +37,13 @@ class ProductController < ApplicationController
     end 
 
     def edit
+        check_session
         @all_category = CategoryHotel.all
         @product = Hotel.find(params[:id])
     end
 
     def update
+        check_session
         @product = Hotel.find(params[:id])
         if @product.update(product_params)
             flash[:success] = "Sửa sản phẩm thành công!"
@@ -51,6 +57,13 @@ class ProductController < ApplicationController
 
     def product_params
         params.require(:product).permit(:name, :desc, :price,:image,:category_hotels_id, :content)
+    end
+
+    private
+    def check_session 
+      if !session[:admin] 
+        redirect_to admin_path
+      end
     end
     
 end

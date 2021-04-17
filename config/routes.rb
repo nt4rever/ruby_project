@@ -42,6 +42,8 @@ Rails.application.routes.draw do
        get 'gallery', to: 'gallery#show'
        get 'new_gallery', to: 'gallery#new'
        post 'create_gallery', to: 'gallery#create'
+
+       get 'account', to: 'admin#account'
   end
   
 end

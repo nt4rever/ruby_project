@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_17_131121) do
+ActiveRecord::Schema.define(version: 2021_04_18_082847) do
 
   create_table "action_text_rich_texts", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -88,6 +88,16 @@ ActiveRecord::Schema.define(version: 2021_04_17_131121) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "content"
     t.index ["category_hotels_id"], name: "index_hotels_on_category_hotels_id"
+  end
+
+  create_table "posts", charset: "utf8mb4", force: :cascade do |t|
+    t.string "post_title"
+    t.string "post_desc"
+    t.text "post_content"
+    t.string "post_image"
+    t.string "post_meta"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|

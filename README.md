@@ -18,3 +18,7 @@ Cài đặt dự án:
 
 * https://viblo.asia/p/action-text-trong-rails-6-Qpmlex8MZrd
 
+* sudo apt-get update
+
+* sudo apt-get install imagemagick --fix-missing
+

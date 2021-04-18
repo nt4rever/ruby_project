@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_17_131121) do
+ActiveRecord::Schema.define(version: 2021_04_18_082906) do
 
   create_table "action_text_rich_texts", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -90,6 +90,16 @@ ActiveRecord::Schema.define(version: 2021_04_17_131121) do
     t.index ["category_hotels_id"], name: "index_hotels_on_category_hotels_id"
   end
 
+  create_table "posts", charset: "utf8mb4", force: :cascade do |t|
+    t.string "posts_title"
+    t.string "posts_desc"
+    t.string "posts_image"
+    t.string "posts_meta"
+    t.text "posts_content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "firstName"
     t.string "lastName"
@@ -98,6 +108,7 @@ ActiveRecord::Schema.define(version: 2021_04_17_131121) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "email", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

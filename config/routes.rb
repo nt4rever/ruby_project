@@ -26,25 +26,32 @@ Rails.application.routes.draw do
   get "dashboard", to: "admin#index"
 
   scope 'admin' do
-       get 'category', to: 'category#category'
-       get 'new_category', to: 'category#new'
-       post 'create_category', to: 'category#create'
-       get 'delete_category', to: 'category#destroy'
-       get 'edit_category', to: 'category#edit'
-       post 'update_category', to: 'category#update'
+   get 'category', to: 'category#category'
+   get 'new_category', to: 'category#new'
+   post 'create_category', to: 'category#create'
+   get 'delete_category', to: 'category#destroy'
+   get 'edit_category', to: 'category#edit'
+   post 'update_category', to: 'category#update'
 
-       get 'product', to: 'product#product'
-       get 'new_product', to: 'product#new'
-       post 'create_product', to: 'product#create'
-       get 'delete_product', to: 'product#destroy'
-       get 'edit_product', to: 'product#edit'
-       post 'update_product', to: 'product#update'
+   get 'product', to: 'product#product'
+   get 'new_product', to: 'product#new'
+   post 'create_product', to: 'product#create'
+   get 'delete_product', to: 'product#destroy'
+   get 'edit_product', to: 'product#edit'
+   post 'update_product', to: 'product#update'
 
-       get 'gallery', to: 'gallery#show'
-       get 'new_gallery', to: 'gallery#new'
-       post 'create_gallery', to: 'gallery#create'
+   get 'gallery', to: 'gallery#show'
+   get 'new_gallery', to: 'gallery#new'
+   post 'create_gallery', to: 'gallery#create'
 
-       get 'account', to: 'admin#account'
-  end
-  
+   get 'account', to: 'admin#account'
+   
+   get 'post', to: 'post#post'
+   get 'new_post', to: 'post#new'
+   post 'create_post', to: 'post#create'
+   get 'edit_post', to: 'post#edit'
+   post 'update_post', to: 'post#update'
+   get 'delete_post', to: 'post#destroy'
+ end
+ 
 end

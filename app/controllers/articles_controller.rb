@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   layout "articles_layout"
   def index
+    @sanpham = Hotel.all.order("id DESC").limit(10)
   end
   def khachsan
     @all_category = CategoryHotel.all
@@ -15,6 +16,11 @@ class ArticlesController < ApplicationController
   end
   def tintuc
   end
+
+  # def tintuc_chitiet
+
+  # end 
+
   def gioithieu
   end
   def lienhe

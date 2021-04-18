@@ -1,14 +1,17 @@
 class CategoryController < ApplicationController
   layout 'admin_layout'
   def category
+    check_session
     @pagy, @all_category = pagy(CategoryHotel.all, items: 10)
   end
 
   def new
+    check_session
     @category = CategoryHotel.new
   end
 
   def create
+    check_session
     @category = CategoryHotel.new cate_params
     if @category.save
       flash[:success] = "Thêm danh mục thành công!"
@@ -20,6 +23,7 @@ class CategoryController < ApplicationController
   end
 
   def destroy
+    check_session
     @cate = CategoryHotel.find(params[:id])
     if @cate.destroy
       flash[:success] = "Xóa danh mục thành công!"
@@ -31,10 +35,12 @@ class CategoryController < ApplicationController
   end
 
   def edit
+    check_session
     @category = CategoryHotel.find(params[:id])
   end
 
   def update
+    check_session
     @category = CategoryHotel.find(params[:id])
     if @category.update(cate_params)
       flash[:success] = "Sửa danh mục thành công!"
@@ -48,5 +54,12 @@ class CategoryController < ApplicationController
   private
     def cate_params
       params.require(:category).permit :category_name, :category_desc
+    end
+  
+    private
+    def check_session 
+      if !session[:admin] 
+        redirect_to admin_path
+      end
     end
 end

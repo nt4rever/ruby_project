@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/khachsan", to: "articles#khachsan"
   get "/detail", to: "articles#detail"
   get "/tintuc", to: "articles#tintuc"
+  # get "/tintuc_chitiet", to: "articles#tintuc_chitiet"
   get "/gioithieu", to: "articles#gioithieu"
   get "/lienhe", to: "articles#lienhe"
 
@@ -42,6 +43,8 @@ Rails.application.routes.draw do
        get 'gallery', to: 'gallery#show'
        get 'new_gallery', to: 'gallery#new'
        post 'create_gallery', to: 'gallery#create'
+
+       get 'account', to: 'admin#account'
   end
   
 end

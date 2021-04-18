@@ -1,15 +1,18 @@
 class GalleryController < ApplicationController
     layout "admin_layout"
     def show
+        check_session
         @gallery = GalleryHotel.where("hotels_id = :id",{id: params[:id]})
     end
 
     def new
+        check_session
         @gallery = GalleryHotel.new
         
     end
 
     def create 
+        check_session
         u = GalleryHotel.where("hotels_id = :id",{id: params[:id]}).first()
         if u 
             u.update(gallery_params)
@@ -30,5 +33,12 @@ class GalleryController < ApplicationController
     
     def gallery_params
         params.require(:gallery).permit(:hotels_id, {path: []})
+    end
+
+    private
+    def check_session 
+      if !session[:admin] 
+        redirect_to admin_path
+      end
     end
 end

@@ -1,0 +1,74 @@
+ <h1 class="m-0 text-dark pb-2">Tài khoản</h1>
+
+ <div class="card-body">
+     <% flash.each do |key, value| %>
+     <div class="callout callout-<%= key %>">
+         <p><%= value %></p>
+     </div>
+     <% end %>
+ </div>
+ <div class="row">
+     <div class="col-12">
+         <div class="card">
+             <div class="card-header">
+                 <a href="#" class="btn btn-outline-info">Thêm tài khoản</a>
+
+                 <div class="card-tools">
+                     <div class="input-group input-group-sm" style="width: 150px;">
+                         <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                         <div class="input-group-append">
+                             <button type="submit" class="btn btn-default">
+                                 <i class="fas fa-search"></i>
+                             </button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <!-- /.card-header -->
+             <div class="card-body table-responsive p-0" style="height: 400px;">
+                 <table class="table table-head-fixed text-nowrap">
+                     <thead>
+                         <tr>
+                             <th>id</th>
+                             <th>name</th>
+                             <th>email</th>
+                             <th>role</th>
+                             <th>updated_at</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <% if @all_account %>
+                         <% @all_account.each do |acc| %>
+                         <tr>
+                             <td>
+                                 <%= acc.id  %>
+                             </td>
+                             <td>
+                                 <%= acc.firstName  %> <%= acc.lastName  %>
+                             </td>
+                             <td>
+                                 <%= acc.email  %>
+                             </td>
+                             <td>
+                                 <%= acc.role  %>
+                             </td>
+                             <td>
+                                 <%= acc.updated_at %>
+                             </td>
+                         </tr>
+                         <% end %>
+                         <% end %>
+                     </tbody>
+                 </table>
+
+             </div>
+             <div class="ml-2">
+                 <%== pagy_bootstrap_nav(@pagy) %>
+             </div>
+
+             <!-- /.card-body -->
+         </div>
+         <!-- /.card -->
+     </div>
+ </div>

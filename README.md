@@ -16,5 +16,5 @@ Cài đặt dự án:
 * export sql mysqldump -u [username] -p [database name] > [database name].sql
 * import sql mysql -u [username] -p newdatabase < [database name].sql
 
-* ...
+* https://viblo.asia/p/action-text-trong-rails-6-Qpmlex8MZrd
 

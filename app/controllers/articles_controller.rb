@@ -14,6 +14,12 @@ class ArticlesController < ApplicationController
   end
   def detail
     @product = Hotel.find(params[:id])
+    if @product.view!=nil
+      @product.view +=1
+    else 
+      @product.view = 1
+    end
+    @product.save
   end
 
   def tintuc
@@ -22,6 +28,12 @@ class ArticlesController < ApplicationController
 
   def tintuc_chitiet
     @post = Post.find(params[:id])
+    if @post.post_view 
+      @post.post_view +=1
+    else  
+      @post.post_view =1
+    end
+    @post.save
     @all_post = Post.all.order("id DESC").limit(5)
   end 
 

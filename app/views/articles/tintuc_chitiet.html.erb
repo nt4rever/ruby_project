@@ -80,7 +80,7 @@
             <div class="row">
                 <div class="noidung2 col-lg-9">
                     <div class="tieude">
-                        <p class="text-muted"><%= @post.post_meta %> - <%= @post.updated_at.to_formatted_s(:long_ordinal)%></p>
+                        <p class="text-muted"><%= @post.post_meta %> - <%= @post.updated_at.to_formatted_s(:long_ordinal)%> - Lượt xem: <%= @post.post_view%></p>
                         <h3><%= @post.post_title %></h3>
                         <div class="is-divider small"></div>
                     </div>

@@ -28,6 +28,10 @@
                     <%=f.number_field :price, class:'form-control', required: 'true' %>
                 </div>
                 <div class="form-group">
+                    <label for="price">Giá giảm</label>
+                    <%=f.number_field :price_discount, class:'form-control', required: 'true' %>
+                </div>
+                <div class="form-group">
                     <label for="category">Danh mục</label>
                     <%=f.collection_select(:category_hotels_id ,@all_category,:id,:category_name, {:prompt=>true},{:class=>'form-control',:required =>'true'}) %>
                 </div>

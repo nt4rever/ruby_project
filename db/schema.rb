@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_18_082847) do
+ActiveRecord::Schema.define(version: 2021_04_19_092440) do
 
   create_table "action_text_rich_texts", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2021_04_18_082847) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "content"
+    t.string "price_discount"
     t.index ["category_hotels_id"], name: "index_hotels_on_category_hotels_id"
   end
 
@@ -98,6 +99,7 @@ ActiveRecord::Schema.define(version: 2021_04_18_082847) do
     t.string "post_meta"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "post_view"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|

@@ -104,6 +104,10 @@
                 <div class="col-lg-9 sanpham">
                     <% if @all_product %>
                     <% @all_product.each do |pro| %>
+                    <% if pro.view==nil 
+                        pro.view = 0
+                        end
+                    %>
                     <div class="khoisp">
                         <div class="nen">
                             <div class="anh">
@@ -115,9 +119,12 @@
                                     <p class="text-dark title"><%= pro.name  %></p>
                                 </a>
                                 <p class="gia">
-                                    <!-- <span class="text-primary truoc"><strike>1,500</strike></span> -->
+                                    <% if pro.price_discount==nil || pro.price_discount == pro.price %>
                                     <span class="text-primary sau" itemid="2999000"> <%= number_to_currency(pro.price, unit: "đ",format: "%n %u", precision: 0)  %></span></p>
-
+                                    <% else %>
+                                    <span class="text-primary truoc"><strike><%= number_to_currency(pro.price, unit: "đ",format: "%n %u", precision: 0)  %></strike></span>
+                                    <span class="text-primary sau" itemid="2999000"> <%= number_to_currency(pro.price_discount, unit: "đ",format: "%n %u", precision: 0)  %></span></p>
+                                    <% end %>
                                 <p class="gioithieu">
                                     <%= raw(pro.desc)  %>
                                 </p>
@@ -128,7 +135,7 @@
                                     <span class="yellow_star"><i class="fa fa-star"></i></span>
                                     <span class="black_star"><i class="fa fa-star"></i></span>
                                     <span class="float-right text-muted small"><i class="fa fa-heart"></i> Đã xem
-                                        <span id="count_view">120</span> </i></span>
+                                        <span id="count_view"><%= pro.view%></span> </i></span>
                                 </p>
                             </div>
                         </div>

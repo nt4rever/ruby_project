@@ -215,19 +215,23 @@
                                             <p class="text-muted location"><%= item.danhmuc.category_name %></p>
                                             <p class="text-dark title"><%= item.name  %></p>
                                             <p class="gia">
-                                                <!-- <span
-                                class="text-primary truoc"><strike>7,000,000
-                                    ₫</strike></span> -->
-                                                <span class="text-primary sau"><%= number_to_currency(item.price, unit: "đ",format: "%n %u", precision: 0)  %></span>
+                                                <% if item.price_discount==nil || item.price_discount == item.price %>
+                                                <span class="text-primary sau" itemid="2999000"> <%= number_to_currency(item.price, unit: "đ",format: "%n %u", precision: 0)  %></span></p>
+                                            <% else %>
+                                            <span class="text-primary truoc"><strike><%= number_to_currency(item.price, unit: "đ",format: "%n %u", precision: 0)  %></strike></span>
+                                            <span class="text-primary sau" itemid="2999000"> <%= number_to_currency(item.price_discount, unit: "đ",format: "%n %u", precision: 0)  %></span></p>
+                                            <% end %>
                                             </p>
                                             <div class="gioithieu">
                                                 <%= raw(item.desc)  %>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="sticker">
-                          <p>Giảm giá!</p>
-                      </div> -->
+                                    <% if item.price_discount!=nil && item.price_discount < item.price %>
+                                    <div class="sticker">
+                                        <p>Giảm giá!</p>
+                                    </div>
+                                    <% end %>
                                 </div>
                             </a>
                         </div>
@@ -322,12 +326,12 @@
             </div>
             <div class="noidung container">
                 <div class="row">
-                   <% @all_post.each do |item|%>
-                   
+                    <% @all_post.each do |item|%>
+
                     <div class="col-sm-4 tin">
-                    <div class="anh mb-4">
-                         <%= image_tag(item.post_image.url, alt: 'Image') if item.post_image? %>
-                    </div>
+                        <div class="anh mb-4">
+                            <%= image_tag(item.post_image.url, alt: 'Image') if item.post_image? %>
+                        </div>
                         <h5><%= item.post_title %></h5>
                         <p><%= raw(item.post_desc) %></p>
                         <a href="<%= tintuc_chitiet_path(:id => item.id) %>" %>Đọc thêm</a>

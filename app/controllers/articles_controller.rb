@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   layout "articles_layout"
   def index
     @sanpham = Hotel.all.order("id DESC").limit(10)
+    @all_post = Post.all.order("id DESC").limit(3)
   end
   def khachsan
     @all_category = CategoryHotel.all
@@ -14,12 +15,15 @@ class ArticlesController < ApplicationController
   def detail
     @product = Hotel.find(params[:id])
   end
+
   def tintuc
+    @pagy, @all_post = pagy(Post.all.order("id DESC"), items: 3)
   end
 
-  # def tintuc_chitiet
-
-  # end 
+  def tintuc_chitiet
+    @post = Post.find(params[:id])
+    @all_post = Post.all.order("id DESC").limit(5)
+  end 
 
   def gioithieu
   end

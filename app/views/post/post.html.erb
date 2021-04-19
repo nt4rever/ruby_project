@@ -33,7 +33,6 @@
                              <th>id</th>
                              <th>post_title</th>
                              <th>post_desc</th>
-                             <th>created_at</th>
                              <th>updated_at</th>
                              <th>edit</th>
                          </tr>
@@ -49,10 +48,8 @@
                                  <%= item.post_title  %>
                              </td>
                              <td>
-                                 <%= raw(item.post_desc)  %>
-                             </td>
-                             <td>
-                                 <%= item.created_at  %>
+                             <div class="overflow-hidden" style="max-width: 500px;">  <%= raw(item.post_desc)  %></div>
+                               
                              </td>
                              <td>
                                  <%= item.updated_at %>

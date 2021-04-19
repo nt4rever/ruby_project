@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/khachsan", to: "articles#khachsan"
   get "/detail", to: "articles#detail"
   get "/tintuc", to: "articles#tintuc"
-  # get "/tintuc_chitiet", to: "articles#tintuc_chitiet"
+  get "/tintuc_chitiet", to: "articles#tintuc_chitiet"
   get "/gioithieu", to: "articles#gioithieu"
   get "/lienhe", to: "articles#lienhe"
 

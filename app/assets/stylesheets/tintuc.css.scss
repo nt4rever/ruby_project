@@ -151,3 +151,101 @@ a.btn_top_a {
 a.btn_top_a:hover {
     color: #72787d;
 }
+
+.dieuhuong {
+    background: #2196f31f;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.dieuhuong .trai.col-lg-6 {
+    padding-left: 0;
+}
+
+.dieuhuong span.trai1 a {
+    color: #666666d9;
+}
+
+.dieuhuong span.trai2 {
+    color: #a9acaca1;
+}
+
+.dieuhuong span.trai3 {
+    color: #666666d9;
+    font-weight: 500;
+}
+
+.dieuhuong .trai a:hover {
+    text-decoration: none;
+    color: #0086cd;
+}
+
+.sidebar input.form-control {
+    width: 70%;
+    float: left;
+    border-radius: 0;
+}
+
+.sidebar button.btn.btn-success {
+    border-radius: 0;
+}
+
+.sidebar .tieude h5 {
+    font-size: 18px;
+}
+
+.sidebar .tieude {
+    margin-top: 20px;
+}
+
+.sidebar .bvmoi a {
+    transition: 0.4s;
+}
+
+.sidebar .bvmoi a:hover {
+    text-decoration: none;
+    color: #000000c9;
+}
+
+
+.anh img {
+    width: 100%;
+    height: 100%;
+}
+
+.noidung2.col-lg-9 {
+    border: 1px solid #8080805e;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.noidung2 p.text-muted {
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+
+.noidung2 h3 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.is-divider.small {
+    border: 2px solid #89969780;
+    width: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.nd img {
+    width: 100%;
+}
+
+.nd {
+    padding: 10px;
+}
+
+@media (max-width:576px) {
+    .sidebar.col-lg-3 {
+        padding: 40px;
+    }
+}

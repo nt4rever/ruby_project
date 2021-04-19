@@ -7,6 +7,7 @@ class SessionController < ApplicationController
     user = User.find_by email: params[:session][:email].downcase
     if user && user.authenticate(params[:session][:password])
       session[:username] = user.lastName
+      session[:customer_id] = user.id
       redirect_to :root
     else
       flash[:danger] = "Email hoặc mật khẩu không đúng!"
@@ -16,6 +17,7 @@ class SessionController < ApplicationController
 
   def destroy
     session.delete(:username)
+    session.delete(:customer_id)
     redirect_to :root 
   end
 end

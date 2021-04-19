@@ -201,54 +201,27 @@
                     </li>
                     <li>
                         <div class="moi_dung">
-                             <%= raw(@product.content)%>
+                            <%= raw(@product.content)%>
                         </div>
                     </li>
                     <li>
                         <div class="moi_dung">
                             <div class="box_cmt">
-                                <div class="cmt">
-                                    <div class="toast" data-autohide="false">
-                                        <div class="toast-header">
-                                            <strong class="mr-auto text-primary">Lê Văn tân</strong>
-                                            <small class="text-muted">5 mins ago</small>
-                                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
-                                        </div>
-                                        <div class="toast-body">
-                                            Tốt!!!!!
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cmt">
-                                    <div class="toast" data-autohide="false">
-                                        <div class="toast-header">
-                                            <strong class="mr-auto text-primary">Lê Văn tân</strong>
-                                            <small class="text-muted">5 mins ago</small>
-                                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
-                                        </div>
-                                        <div class="toast-body">
-                                            Tốt!!!!!
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cmt">
-                                    <div class="toast" data-autohide="false">
-                                        <div class="toast-header">
-                                            <strong class="mr-auto text-primary">Lê Văn tân</strong>
-                                            <small class="text-muted">5 mins ago</small>
-                                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
-                                        </div>
-                                        <div class="toast-body">
-                                            dịch vu rất Tốt!!!!!
-                                        </div>
-                                    </div>
-                                </div>
+                               <%= render partial: "comments/index",  collection: @comments, as: "comment" %>
                             </div>
+
+
+                            <%if session[:customer_id]%>
                             <div class="box_danhgia">
                                 <p>Thêm đánh giá:</p>
-                                <input type="text" name="" id="cmt_text" class="form-control">
-                                <button type="button" class="btn_danhgia btn btn-outline-primary">Gửi đi</button>
+                                <%= form_with model: Comment.new, local: false, id: "comment_form" do |form| %>
+                                <%= form.text_field :content, class: 'form-control', id: "comment_text" %>
+                                <%= form.hidden_field :hotel_id, class: 'form-control', value: @product.id %>
+                                <%= form.hidden_field :user_id, class: 'form-control', value: session[:customer_id]  %>
+                                <%= form.submit class: 'btn_danhgia btn btn-outline-primary ml-2' %>
+                                <% end %>
                             </div>
+                            <% end %>
                         </div>
                     </li>
                 </ul>
@@ -262,10 +235,10 @@
         <div class="carousel" data-flickity='{ "autoPlay": true }'>
             <% @product.thuvienanh.path.each do |p| %>
             <div class="carousel-cell">
-                 <%= image_tag(p.url, alt: 'Image') %>
+                <%= image_tag(p.url, alt: 'Image') %>
             </div>
-             <% end %>
-            
+            <% end %>
+
         </div>
     </div>
 

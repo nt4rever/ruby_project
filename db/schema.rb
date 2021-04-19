@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_092440) do
+ActiveRecord::Schema.define(version: 2021_04_19_100205) do
 
   create_table "action_text_rich_texts", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -68,6 +68,16 @@ ActiveRecord::Schema.define(version: 2021_04_19_092440) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
+  create_table "comments", charset: "utf8mb4", force: :cascade do |t|
+    t.string "content"
+    t.bigint "hotel_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hotel_id"], name: "index_comments_on_hotel_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "gallery_hotels", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "hotels_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -115,6 +125,8 @@ ActiveRecord::Schema.define(version: 2021_04_19_092440) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "hotels"
+  add_foreign_key "comments", "users"
   add_foreign_key "gallery_hotels", "hotels", column: "hotels_id"
   add_foreign_key "hotels", "category_hotels", column: "category_hotels_id"
 end

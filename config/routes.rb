@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get "/gioithieu", to: "articles#gioithieu"
   get "/lienhe", to: "articles#lienhe"
 
+  resources :comments
+
   # users, session: controller login, register and logout
   get     "login"    => "session#new"
   post    "login"    => "session#create"
@@ -53,6 +55,7 @@ Rails.application.routes.draw do
        get 'edit_post', to: 'post#edit'
        post 'update_post', to: 'post#update'
        get 'delete_post', to: 'post#destroy'
+
 
 
   end

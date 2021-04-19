@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
     end
   end
   def detail
+    @comments = Comment.where(["hotel_id = :u", { u: params[:id] }])
     @product = Hotel.find(params[:id])
     if @product.view!=nil
       @product.view +=1

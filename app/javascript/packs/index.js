@@ -1,19 +1,25 @@
 $(function () {
-    $('.nav_Bar .search').mouseenter(function () {
-        $('.form_search_navbar').addClass('active_form_search_navbar');
-    });
-
-    $('.form_search_navbar').mouseleave(function () {
-        setTimeout(function () {
+    var click = false;
+    $('.nav_Bar .search').click(function () {
+        if (click == false) {
+            $('.form_search_navbar').addClass('active_form_search_navbar');
+        } else {
             $('.form_search_navbar').removeClass('active_form_search_navbar');
-        }, 3000);
+        }
+        click = !click;
     });
 
-    $('a.carousel-control-prev').on('click', function(){
+    // $('.form_search_navbar').mouseleave(function () {
+    //     setTimeout(function () {
+    //         $('.form_search_navbar').removeClass('active_form_search_navbar');
+    //     }, 3000);
+    // });
+
+    $('a.carousel-control-prev').on('click', function () {
         click_slider()
     })
 
-     $('a.carousel-control-next').on('click', function(){
+    $('a.carousel-control-next').on('click', function () {
         click_slider()
     })
 

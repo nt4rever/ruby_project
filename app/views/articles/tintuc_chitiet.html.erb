@@ -31,12 +31,14 @@
                                 <i class="fa fa-search"></i>
                             </div>
                         </div>
-                        <div class="form_search_navbar flex-row">
-                            <input type="text" name="" id="" class="form-control">
-                            <div class="icon_search_navbar">
-                                <button type="submit" class="form-control"><i class="fa fa-search"></i></button>
+                         <div class="form_search_navbar flex-row">
+                                <%= form_tag(search_path, method: :get) do   %>
+                                <%= text_field_tag :text,"", class:'form-control', required: 'true' %>
+                                <div class="icon_search_navbar">
+                                    <button type="submit" class="form-control"><i class="fa fa-search"></i></button>
+                                </div>
+                                <% end %>
                             </div>
-                        </div>
                     </li>
                     <li class="nav-item">
                         <% if  session[:username] %>

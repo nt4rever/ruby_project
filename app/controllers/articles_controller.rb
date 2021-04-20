@@ -42,4 +42,10 @@ class ArticlesController < ApplicationController
   end
   def lienhe
   end
+
+  def search 
+    @all_category = CategoryHotel.all
+    @pagy, @all_product = pagy(Hotel.where("name LIKE ?","%"+params[:text]+"%").order("id DESC"), items: 4)
+  end
+  
 end

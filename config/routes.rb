@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "/tintuc_chitiet", to: "articles#tintuc_chitiet"
   get "/gioithieu", to: "articles#gioithieu"
   get "/lienhe", to: "articles#lienhe"
+  get "search", to: "articles#search"
 
   resources :comments
 
@@ -56,7 +57,8 @@ Rails.application.routes.draw do
        post 'update_post', to: 'post#update'
        get 'delete_post', to: 'post#destroy'
 
-
+       get 'all_comments', to: 'comments#index'
+       get 'delete_comment', to: 'comments#destroy'
 
   end
   

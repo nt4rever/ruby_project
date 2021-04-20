@@ -2,14 +2,17 @@ class PostController < ApplicationController
     layout 'admin_layout'
 
     def post
+        check_session
         @pagy, @all_post = pagy(Post.all, items: 10)
     end
  
     def new
+        check_session
         
     end
 
     def create
+        check_session
         @post = Post.new post_params
         if @post.save 
             flash[:success] = "Thêm bài viết thành công!"
@@ -21,10 +24,12 @@ class PostController < ApplicationController
     end
 
     def  edit 
+        check_session
         @post = Post.find(params[:id])
     end
 
     def update
+        check_session
         @post = Post.find(params[:id])
         if @post.update(post_params)
           flash[:success] = "Sửa bài viết thành công!"
@@ -36,6 +41,7 @@ class PostController < ApplicationController
     end
 
     def destroy 
+        check_session
         @post = Post.find(params[:id])
         if @post.destroy 
             flash[:success] = "Xóa bài viết thành công!"
@@ -50,5 +56,12 @@ class PostController < ApplicationController
     private
     def post_params
       params.require(:post).permit :post_title, :post_desc, :post_content, :post_meta, :post_image
+    end
+
+    private
+    def check_session 
+      if !session[:admin] 
+        redirect_to admin_path
+      end
     end
 end

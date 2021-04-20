@@ -32,7 +32,7 @@ CREATE TABLE `action_text_rich_texts` (
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_action_text_rich_texts_uniqueness` (`record_type`,`record_id`,`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `action_text_rich_texts` (
 
 LOCK TABLES `action_text_rich_texts` WRITE;
 /*!40000 ALTER TABLE `action_text_rich_texts` DISABLE KEYS */;
-INSERT INTO `action_text_rich_texts` VALUES (1,'category_desc','<div>hello</div>','CategoryHotel',1,'2021-04-17 13:34:30.293759','2021-04-17 13:34:30.293759'),(2,'category_desc','<div>ddaya la giuong doi</div>','CategoryHotel',2,'2021-04-17 13:36:09.354583','2021-04-17 13:36:09.354583'),(3,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',8,'2021-04-17 13:40:14.895133','2021-04-17 13:40:14.895133'),(4,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s<br><br></div>','Hotel',8,'2021-04-17 13:40:14.942120','2021-04-17 13:57:52.012044'),(5,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',7,'2021-04-17 13:40:59.749140','2021-04-17 13:40:59.749140'),(6,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',7,'2021-04-17 13:40:59.765584','2021-04-17 13:40:59.765584'),(7,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',6,'2021-04-17 13:41:06.724005','2021-04-17 13:41:06.724005'),(8,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',6,'2021-04-17 13:41:06.737883','2021-04-17 13:41:06.737883'),(9,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',5,'2021-04-17 13:41:22.120233','2021-04-17 13:41:22.120233'),(10,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',5,'2021-04-17 13:41:22.136618','2021-04-17 13:41:22.136618'),(11,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',4,'2021-04-17 13:41:28.296471','2021-04-17 13:41:28.296471'),(12,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',4,'2021-04-17 13:41:28.313035','2021-04-17 13:41:28.313035'),(13,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',3,'2021-04-17 13:41:35.147118','2021-04-17 13:41:35.147118'),(14,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',3,'2021-04-17 13:41:35.162567','2021-04-17 13:41:35.162567');
+INSERT INTO `action_text_rich_texts` VALUES (1,'category_desc','<div>hello</div>','CategoryHotel',1,'2021-04-17 13:34:30.293759','2021-04-17 13:34:30.293759'),(2,'category_desc','<div>ddaya la giuong doi</div>','CategoryHotel',2,'2021-04-17 13:36:09.354583','2021-04-17 13:36:09.354583'),(3,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',8,'2021-04-17 13:40:14.895133','2021-04-17 13:40:14.895133'),(4,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s<br><action-text-attachment sgid=\"BAh7CEkiCGdpZAY6BkVUSSI0Z2lkOi8vcHJvamVjdDEvQWN0aXZlU3RvcmFnZTo6QmxvYi81P2V4cGlyZXNfaW4GOwBUSSIMcHVycG9zZQY7AFRJIg9hdHRhY2hhYmxlBjsAVEkiD2V4cGlyZXNfYXQGOwBUMA==--48b4b4af14ff40a901e1b922c67bb5fa96d44222\" content-type=\"image/jpeg\" url=\"http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--053ac6104032bd73894feef8d6a22c0bb72b6dc0/Capture123.JPG\" filename=\"Capture123.JPG\" filesize=\"71663\" width=\"1280\" height=\"561\" previewable=\"true\" presentation=\"gallery\"></action-text-attachment><br><br></div>','Hotel',8,'2021-04-17 13:40:14.942120','2021-04-19 09:34:52.347438'),(5,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',7,'2021-04-17 13:40:59.749140','2021-04-17 13:40:59.749140'),(6,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',7,'2021-04-17 13:40:59.765584','2021-04-17 13:40:59.765584'),(7,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',6,'2021-04-17 13:41:06.724005','2021-04-17 13:41:06.724005'),(8,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',6,'2021-04-17 13:41:06.737883','2021-04-17 13:41:06.737883'),(9,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',5,'2021-04-17 13:41:22.120233','2021-04-17 13:41:22.120233'),(10,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',5,'2021-04-17 13:41:22.136618','2021-04-17 13:41:22.136618'),(11,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',4,'2021-04-17 13:41:28.296471','2021-04-17 13:41:28.296471'),(12,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',4,'2021-04-17 13:41:28.313035','2021-04-17 13:41:28.313035'),(13,'desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',3,'2021-04-17 13:41:35.147118','2021-04-17 13:41:35.147118'),(14,'content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</div>','Hotel',3,'2021-04-17 13:41:35.162567','2021-04-17 13:41:35.162567'),(19,'post_desc','<div>Toạ lạc trên đảo Hòn Tre với những bãi biển trong xanh quanh năm, Vinpearl Land được biết đến như “thiên đường của miền nhiệt đới”</div>','Post',3,'2021-04-19 02:38:55.117364','2021-04-19 03:03:26.468391'),(20,'post_content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><action-text-attachment sgid=\"BAh7CEkiCGdpZAY6BkVUSSI0Z2lkOi8vcHJvamVjdDEvQWN0aXZlU3RvcmFnZTo6QmxvYi85P2V4cGlyZXNfaW4GOwBUSSIMcHVycG9zZQY7AFRJIg9hdHRhY2hhYmxlBjsAVEkiD2V4cGlyZXNfYXQGOwBUMA==--b65959e217919c7302434160951591148dfca21f\" content-type=\"image/jpeg\" url=\"http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--85bf097f18661b5c540c68d53bc3c70693c865c2/family-fun.jpg\" filename=\"family-fun.jpg\" filesize=\"186173\" width=\"480\" height=\"312\" presentation=\"gallery\"></action-text-attachment><br><br></div>','Post',3,'2021-04-19 02:38:55.135746','2021-04-19 06:29:27.407994'),(21,'post_desc','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry.</div>','Post',4,'2021-04-19 02:41:03.425569','2021-04-19 02:41:03.425569'),(22,'post_content','<div><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum<br><action-text-attachment sgid=\"BAh7CEkiCGdpZAY6BkVUSSI0Z2lkOi8vcHJvamVjdDEvQWN0aXZlU3RvcmFnZTo6QmxvYi83P2V4cGlyZXNfaW4GOwBUSSIMcHVycG9zZQY7AFRJIg9hdHRhY2hhYmxlBjsAVEkiD2V4cGlyZXNfYXQGOwBUMA==--5a902f30b8da872a5713fc027456569d3eed3d76\" content-type=\"image/jpeg\" url=\"http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f9223d54c48ecb0e0ff35bdaf512710baed89511/beautifuk-scenery.jpg\" filename=\"beautifuk-scenery.jpg\" filesize=\"194107\" width=\"480\" height=\"312\" previewable=\"true\" presentation=\"gallery\" caption=\"anh siu dep\"></action-text-attachment></div>','Post',4,'2021-04-19 02:41:03.454000','2021-04-19 03:15:29.948594'),(23,'desc','<div>Kiệt 104 Kim Long, Đại Nội Huế, Huế, Việt Nam, 49000.<br>Designed for both business and leisure travel, Ancient Hue Garden Houses is ideally situated in Imperial Citadel, one of the city\'s most popular locales. From here, guests can make the most of all that the lively city has to offer. With its convenient location, the property offers easy access to the city\'s must-see destinations.</div>','Hotel',9,'2021-04-20 11:58:06.175695','2021-04-20 11:58:06.175695'),(24,'content','<div>At Ancient Hue Garden Houses, the excellent service and superior facilities make for an unforgettable stay. While lodging at this wonderful property, guests can enjoy free Wi-Fi in all rooms, 24-hour security, taxi service, kitchen, express check-in/check-out.<br><br>The property\'s accommodations have been carefully appointed to the highest degree of comfort and convenience. In some of the rooms, guests can find locker, closet, complimentary tea, towels, slippers. The property\'s host of recreational offerings ensures you have plenty to do during your stay. Whatever your purpose of visit, Ancient Hue Garden Houses is an excellent choice for your stay in Hue.</div>','Hotel',9,'2021-04-20 11:58:06.390419','2021-04-20 11:58:06.390419');
 /*!40000 ALTER TABLE `action_text_rich_texts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +63,7 @@ CREATE TABLE `active_storage_attachments` (
   UNIQUE KEY `index_active_storage_attachments_uniqueness` (`record_type`,`record_id`,`name`,`blob_id`),
   KEY `index_active_storage_attachments_on_blob_id` (`blob_id`),
   CONSTRAINT `fk_rails_c3b3935057` FOREIGN KEY (`blob_id`) REFERENCES `active_storage_blobs` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,6 +72,7 @@ CREATE TABLE `active_storage_attachments` (
 
 LOCK TABLES `active_storage_attachments` WRITE;
 /*!40000 ALTER TABLE `active_storage_attachments` DISABLE KEYS */;
+INSERT INTO `active_storage_attachments` VALUES (1,'embeds','ActionText::RichText',4,5,'2021-04-18 15:56:40'),(2,'image','ActiveStorage::VariantRecord',1,6,'2021-04-18 16:09:54'),(3,'embeds','ActionText::RichText',22,7,'2021-04-19 02:55:23'),(4,'image','ActiveStorage::VariantRecord',2,8,'2021-04-19 02:55:27'),(5,'embeds','ActionText::RichText',20,9,'2021-04-19 06:29:27'),(6,'image','ActiveStorage::VariantRecord',3,10,'2021-04-19 06:29:32');
 /*!40000 ALTER TABLE `active_storage_attachments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +95,7 @@ CREATE TABLE `active_storage_blobs` (
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_active_storage_blobs_on_key` (`key`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +104,7 @@ CREATE TABLE `active_storage_blobs` (
 
 LOCK TABLES `active_storage_blobs` WRITE;
 /*!40000 ALTER TABLE `active_storage_blobs` DISABLE KEYS */;
-INSERT INTO `active_storage_blobs` VALUES (1,'j8auxkn3cl2nscmkdkru57li10kb','cart.png','image/png',NULL,'local',12350,'eIXSODLaknNlwMy8z6TowA==','2021-04-17 13:28:45'),(2,'fevbvsbgdwifrv97or2dhq6441en','cart.png','image/png',NULL,'local',12350,'eIXSODLaknNlwMy8z6TowA==','2021-04-17 13:29:32'),(3,'ahwoitjvqjmt1qaqmej0zn1bwx5s','front-of-bus.png','image/png',NULL,'local',6131,'72sB7m9CS23G2xg0ARPt6w==','2021-04-17 13:30:10');
+INSERT INTO `active_storage_blobs` VALUES (1,'j8auxkn3cl2nscmkdkru57li10kb','cart.png','image/png',NULL,'local',12350,'eIXSODLaknNlwMy8z6TowA==','2021-04-17 13:28:45'),(2,'fevbvsbgdwifrv97or2dhq6441en','cart.png','image/png',NULL,'local',12350,'eIXSODLaknNlwMy8z6TowA==','2021-04-17 13:29:32'),(3,'ahwoitjvqjmt1qaqmej0zn1bwx5s','front-of-bus.png','image/png',NULL,'local',6131,'72sB7m9CS23G2xg0ARPt6w==','2021-04-17 13:30:10'),(4,'99yueytr40d6m69yht550otw60gc','145755483_2552875058348081_3083078095851756570_n.jpg','image/jpeg',NULL,'local',728140,'Yvo1FELyWWRWhDHS4wWvRg==','2021-04-18 15:56:18'),(5,'4d8zzed66gry3qh7nectqgwzjpeu','Capture123.JPG','image/jpeg','{\"identified\":true,\"analyzed\":true}','local',71663,'gLCHPlFGW7d7QNWLD7mrKQ==','2021-04-18 15:56:37'),(6,'lvlt4xbiyjfyrzf6cf9zbko3z600','Capture123.JPG','image/jpeg','{\"identified\":true,\"width\":1024,\"height\":449,\"analyzed\":true}','local',51718,'104H7/W/OWzRIdKvNODd3Q==','2021-04-18 16:09:54'),(7,'h2f5x2ej98b9fkoqm46o561zf0g1','beautifuk-scenery.jpg','image/jpeg','{\"identified\":true,\"width\":480,\"height\":312,\"analyzed\":true}','local',194107,'vMBYmt1YxRMyC9bL1i+zdQ==','2021-04-19 02:55:20'),(8,'amdno72ptwfo85l48aa917drdbn6','beautifuk-scenery.jpg','image/jpeg','{\"identified\":true,\"width\":480,\"height\":312,\"analyzed\":true}','local',205843,'3bRVzO+gUo16w8+7cIb7oQ==','2021-04-19 02:55:27'),(9,'9z9palsf66porxcmn7mig05d36gh','family-fun.jpg','image/jpeg','{\"identified\":true,\"width\":480,\"height\":312,\"analyzed\":true}','local',186173,'AF0INhowQuhUG/hZxRm6Ug==','2021-04-19 06:29:22'),(10,'cko32nv5l2krk43gcr5kcsw4lo47','family-fun.jpg','image/jpeg','{\"identified\":true,\"width\":480,\"height\":312,\"analyzed\":true}','local',196941,'QYUF8B3hPHo1CvrDDd6VTg==','2021-04-19 06:29:32');
 /*!40000 ALTER TABLE `active_storage_blobs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +122,7 @@ CREATE TABLE `active_storage_variant_records` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_active_storage_variant_records_uniqueness` (`blob_id`,`variation_digest`),
   CONSTRAINT `fk_rails_993965df05` FOREIGN KEY (`blob_id`) REFERENCES `active_storage_blobs` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,6 +131,7 @@ CREATE TABLE `active_storage_variant_records` (
 
 LOCK TABLES `active_storage_variant_records` WRITE;
 /*!40000 ALTER TABLE `active_storage_variant_records` DISABLE KEYS */;
+INSERT INTO `active_storage_variant_records` VALUES (1,5,'Wy/5dmv6120zhc9919QkZQcmZrk='),(2,7,'g9oDsuZ2Ke1OimlPvx7V2sj306E='),(3,9,'g9oDsuZ2Ke1OimlPvx7V2sj306E=');
 /*!40000 ALTER TABLE `active_storage_variant_records` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,6 +219,38 @@ LOCK TABLES `ckeditor_assets` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comments` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `content` varchar(255) DEFAULT NULL,
+  `hotel_id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `created_at` datetime(6) NOT NULL,
+  `updated_at` datetime(6) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_comments_on_hotel_id` (`hotel_id`),
+  KEY `index_comments_on_user_id` (`user_id`),
+  CONSTRAINT `fk_rails_03de2dc08c` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `fk_rails_cb38e8726a` FOREIGN KEY (`hotel_id`) REFERENCES `hotels` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comments`
+--
+
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (121,'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',8,2,'2021-04-20 01:57:18.233816','2021-04-20 01:57:18.233816'),(133,'In rails 5, as per the instructions in Rails Guides, you can use:',7,1,'2021-04-20 02:24:54.604280','2021-04-20 02:24:54.604280'),(134,'check_session ngao a',7,1,'2021-04-20 02:26:05.111061','2021-04-20 02:26:05.111061'),(135,'strftime (DateTime) - APIdock',6,1,'2021-04-20 02:28:17.726340','2021-04-20 02:28:17.726340');
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `gallery_hotels`
 --
 
@@ -232,7 +266,7 @@ CREATE TABLE `gallery_hotels` (
   PRIMARY KEY (`id`),
   KEY `index_gallery_hotels_on_hotels_id` (`hotels_id`),
   CONSTRAINT `fk_rails_177052a975` FOREIGN KEY (`hotels_id`) REFERENCES `hotels` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -241,7 +275,7 @@ CREATE TABLE `gallery_hotels` (
 
 LOCK TABLES `gallery_hotels` WRITE;
 /*!40000 ALTER TABLE `gallery_hotels` DISABLE KEYS */;
-INSERT INTO `gallery_hotels` VALUES (1,8,'2021-04-11 03:23:41.359060','2021-04-12 13:30:55.155982','[\"angsana.jpg\", \"langcobechressort.jpg\", \"thanhtam.jpg\"]'),(2,7,'2021-04-12 13:44:31.067684','2021-04-12 13:44:42.642394','[\"angsana.jpg\", \"angsana2.jpg\", \"angsana3.jpg\"]');
+INSERT INTO `gallery_hotels` VALUES (1,8,'2021-04-11 03:23:41.359060','2021-04-12 13:30:55.155982','[\"angsana.jpg\", \"langcobechressort.jpg\", \"thanhtam.jpg\"]'),(2,7,'2021-04-12 13:44:31.067684','2021-04-12 13:44:42.642394','[\"angsana.jpg\", \"angsana2.jpg\", \"angsana3.jpg\"]'),(3,9,'2021-04-20 12:00:39.683462','2021-04-20 12:00:39.683462','[\"acient_hue3.jpg\", \"acient_hue2.jpg\", \"acient_hue1.jpg\"]');
 /*!40000 ALTER TABLE `gallery_hotels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -264,10 +298,11 @@ CREATE TABLE `hotels` (
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   `content` text,
+  `price_discount` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_hotels_on_category_hotels_id` (`category_hotels_id`),
   CONSTRAINT `fk_rails_204f558874` FOREIGN KEY (`category_hotels_id`) REFERENCES `category_hotels` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -276,8 +311,39 @@ CREATE TABLE `hotels` (
 
 LOCK TABLES `hotels` WRITE;
 /*!40000 ALTER TABLE `hotels` DISABLE KEYS */;
-INSERT INTO `hotels` VALUES (3,'Angsana Lang Co','<p><strong>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co.</strong> Angsana Lang Co l&agrave; resort hiện đại với nội thất đầy phong c&aacute;ch. C&aacute;c chỗ nghỉ lắp m&aacute;y điều h&ograve;a tại đ&acirc;y được cung cấp Wi-Fi miễn ph&iacute;. Resort n&agrave;y c&oacute; 2 nh&agrave; h&agrave;ng v&agrave; 1 quầy bar cũng như spa v&agrave; hồ bơi ngo&agrave;i trời.</p>\r\n','10000000','angsana.jpg',NULL,NULL,2,'2021-04-04 03:43:33.956037','2021-04-17 13:41:35.171069',NULL),(4,'Thanh Tâm Resort','<p><strong>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co.</strong>&nbsp;Angsana Lang Co l&agrave; resort hiện đại với nội thất đầy phong c&aacute;ch. C&aacute;c chỗ nghỉ lắp m&aacute;y điều h&ograve;a tại đ&acirc;y được cung cấp Wi-Fi miễn ph&iacute;. Resort n&agrave;y c&oacute; 2 nh&agrave; h&agrave;ng v&agrave; 1 quầy bar cũng như spa v&agrave; hồ bơi ngo&agrave;i trời.</p>\r\n','2990000','thanhtam.jpg',NULL,NULL,2,'2021-04-04 03:57:19.430233','2021-04-17 13:41:28.320233',NULL),(5,'Lang Co Beach','<p><strong>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co.</strong>&nbsp;Angsana Lang Co l&agrave; resort hiện đại với nội thất đầy phong c&aacute;ch. C&aacute;c chỗ nghỉ lắp m&aacute;y điều h&ograve;a tại đ&acirc;y được cung cấp Wi-Fi miễn ph&iacute;. Resort n&agrave;y c&oacute; 2 nh&agrave; h&agrave;ng v&agrave; 1 quầy bar cũng như spa v&agrave; hồ bơi ngo&agrave;i trời.</p>\r\n','3500000','thanhtam.jpg',NULL,NULL,1,'2021-04-11 01:52:01.085676','2021-04-17 13:41:22.143030',NULL),(6,'Novotel ','<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.&nbsp;</p>\r\n','9990000','langcobechressort.jpg',NULL,NULL,2,'2021-04-11 02:31:06.496751','2021-04-17 13:41:06.745312',NULL),(7,'Vinpearl','<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.&nbsp;</p>\r\n','1990000','angsana.jpg',NULL,NULL,2,'2021-04-11 02:32:05.846452','2021-04-17 13:40:59.771001',NULL),(8,'Stay Hotel','<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. OK</p>\r\n','3900000','thanhtam.jpg',NULL,NULL,2,'2021-04-11 02:34:24.275341','2021-04-17 13:57:52.012409','<p>C&aacute;c ph&ograve;ng, suite v&agrave; loft rộng r&atilde;i tại đ&acirc;y được trang bị TV truyền h&igrave;nh vệ tinh m&agrave;n h&igrave;nh phẳng c&ugrave;ng đầu đĩa DVD. C&aacute;c ph&ograve;ng tắm ri&ecirc;ng c&oacute; bồn tắm, m&aacute;y sấy t&oacute;c, &aacute;o cho&agrave;ng tắm v&agrave; đồ vệ sinh c&aacute; nh&acirc;n miễn ph&iacute;. C&aacute;c suite cũng như loft đi k&egrave;m với bếp nhỏ v&agrave; khu vực sinh hoạt rộng r&atilde;i.<br />\r\nKinh th&agrave;nh Huế c&aacute;ch Angsana Lang Co 1 tiếng 30 ph&uacute;t l&aacute;i xe. Từ chỗ nghỉ n&agrave;y, du kh&aacute;ch chỉ cần đi xe 2 tiếng l&agrave; đến khu phố cổ Hội An, di sản thế giới đ&atilde; được UNESCO c&ocirc;ng nhận v&agrave; những ngọn đồi lịch sử của Th&aacute;nh địa Mỹ Sơn. S&acirc;n bay Huế v&agrave; S&acirc;n bay Đ&agrave; Nẵng c&aacute;ch đ&oacute; lần lượt 44 km v&agrave; 60 km.<br />\r\nDu kh&aacute;ch c&oacute; thể t&acirc;̣n hưởng c&aacute;c liệu ph&aacute;p mát-xa thư gi&atilde;n hay r&egrave;n luy&ecirc;̣n sức khỏe tại trung t&acirc;m thể dục. Tại đ&acirc;y cũng c&oacute; c&aacute;c hoạt động thể thao dưới nước. Quầy lễ t&acirc;n hoạt động 24 giờ của resort cung cấp tiện nghi để h&agrave;nh l&yacute; v&agrave; k&eacute;t an to&agrave;n. Dịch vụ giặt ủi được bố tr&iacute; k&egrave;m phụ ph&iacute;.<br />\r\nẨm thực ch&acirc;u &Aacute; được phục vụ tại nh&agrave; h&agrave;ng ch&iacute;nh của resort, nơi du kh&aacute;ch c&oacute; thể ăn uống trong nh&agrave; v&agrave; ngo&agrave;i trời. Qu&aacute;n Rice Bar cung cấp thực đơn phong ph&uacute; với đồ uống v&agrave; c&aacute;c m&oacute;n ăn được chế biến từ gạo. Moomba l&agrave; nh&agrave; h&agrave;ng b&igrave;nh dị b&ecirc;n b&atilde;i biển cung cấp m&oacute;n tapas v&agrave; l&agrave; nơi kh&aacute;ch c&oacute; thể đến để khi&ecirc;u vũ.<br />\r\nC&aacute;c cặp đ&ocirc;i đặc biệt th&iacute;ch địa điểm n&agrave;y &mdash; họ cho điểm 8,4 cho kỳ nghỉ d&agrave;nh cho 2 người.<br />\r\nCh&uacute;ng t&ocirc;i sử dụng ng&ocirc;n ngữ của bạn!</p>\r\n');
+INSERT INTO `hotels` VALUES (3,'Angsana Lang Co','<p><strong>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co.</strong> Angsana Lang Co l&agrave; resort hiện đại với nội thất đầy phong c&aacute;ch. C&aacute;c chỗ nghỉ lắp m&aacute;y điều h&ograve;a tại đ&acirc;y được cung cấp Wi-Fi miễn ph&iacute;. Resort n&agrave;y c&oacute; 2 nh&agrave; h&agrave;ng v&agrave; 1 quầy bar cũng như spa v&agrave; hồ bơi ngo&agrave;i trời.</p>\r\n','10000000','angsana.jpg',NULL,4,2,'2021-04-04 03:43:33.956037','2021-04-20 13:13:51.341093',NULL,'10000000'),(4,'Thanh Tâm Resort','<p><strong>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co.</strong>&nbsp;Angsana Lang Co l&agrave; resort hiện đại với nội thất đầy phong c&aacute;ch. C&aacute;c chỗ nghỉ lắp m&aacute;y điều h&ograve;a tại đ&acirc;y được cung cấp Wi-Fi miễn ph&iacute;. Resort n&agrave;y c&oacute; 2 nh&agrave; h&agrave;ng v&agrave; 1 quầy bar cũng như spa v&agrave; hồ bơi ngo&agrave;i trời.</p>\r\n','2990000','thanhtam.jpg',3,3,2,'2021-04-04 03:57:19.430233','2021-04-20 13:13:37.557292',NULL,'2600000'),(5,'Lang Co Beach','<p><strong>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co.</strong>&nbsp;Angsana Lang Co l&agrave; resort hiện đại với nội thất đầy phong c&aacute;ch. C&aacute;c chỗ nghỉ lắp m&aacute;y điều h&ograve;a tại đ&acirc;y được cung cấp Wi-Fi miễn ph&iacute;. Resort n&agrave;y c&oacute; 2 nh&agrave; h&agrave;ng v&agrave; 1 quầy bar cũng như spa v&agrave; hồ bơi ngo&agrave;i trời.</p>\r\n','3500000','thanhtam.jpg',2,4,1,'2021-04-11 01:52:01.085676','2021-04-20 13:13:23.014867',NULL,'3500000'),(6,'Novotel ','<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.&nbsp;</p>\r\n','9990000','langcobechressort.jpg',4,5,2,'2021-04-11 02:31:06.496751','2021-04-20 13:13:10.769704',NULL,'9990000'),(7,'Vinpearl','<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.&nbsp;</p>\r\n','1900000','angsana.jpg',60,4,2,'2021-04-11 02:32:05.846452','2021-04-20 13:12:55.279999',NULL,'1800000'),(8,'Stay Hotel','<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. OK</p>\r\n','3900000','thanhtam.jpg',87,3,2,'2021-04-11 02:34:24.275341','2021-04-20 13:12:48.362546','<p>C&aacute;c ph&ograve;ng, suite v&agrave; loft rộng r&atilde;i tại đ&acirc;y được trang bị TV truyền h&igrave;nh vệ tinh m&agrave;n h&igrave;nh phẳng c&ugrave;ng đầu đĩa DVD. C&aacute;c ph&ograve;ng tắm ri&ecirc;ng c&oacute; bồn tắm, m&aacute;y sấy t&oacute;c, &aacute;o cho&agrave;ng tắm v&agrave; đồ vệ sinh c&aacute; nh&acirc;n miễn ph&iacute;. C&aacute;c suite cũng như loft đi k&egrave;m với bếp nhỏ v&agrave; khu vực sinh hoạt rộng r&atilde;i.<br />\r\nKinh th&agrave;nh Huế c&aacute;ch Angsana Lang Co 1 tiếng 30 ph&uacute;t l&aacute;i xe. Từ chỗ nghỉ n&agrave;y, du kh&aacute;ch chỉ cần đi xe 2 tiếng l&agrave; đến khu phố cổ Hội An, di sản thế giới đ&atilde; được UNESCO c&ocirc;ng nhận v&agrave; những ngọn đồi lịch sử của Th&aacute;nh địa Mỹ Sơn. S&acirc;n bay Huế v&agrave; S&acirc;n bay Đ&agrave; Nẵng c&aacute;ch đ&oacute; lần lượt 44 km v&agrave; 60 km.<br />\r\nDu kh&aacute;ch c&oacute; thể t&acirc;̣n hưởng c&aacute;c liệu ph&aacute;p mát-xa thư gi&atilde;n hay r&egrave;n luy&ecirc;̣n sức khỏe tại trung t&acirc;m thể dục. Tại đ&acirc;y cũng c&oacute; c&aacute;c hoạt động thể thao dưới nước. Quầy lễ t&acirc;n hoạt động 24 giờ của resort cung cấp tiện nghi để h&agrave;nh l&yacute; v&agrave; k&eacute;t an to&agrave;n. Dịch vụ giặt ủi được bố tr&iacute; k&egrave;m phụ ph&iacute;.<br />\r\nẨm thực ch&acirc;u &Aacute; được phục vụ tại nh&agrave; h&agrave;ng ch&iacute;nh của resort, nơi du kh&aacute;ch c&oacute; thể ăn uống trong nh&agrave; v&agrave; ngo&agrave;i trời. Qu&aacute;n Rice Bar cung cấp thực đơn phong ph&uacute; với đồ uống v&agrave; c&aacute;c m&oacute;n ăn được chế biến từ gạo. Moomba l&agrave; nh&agrave; h&agrave;ng b&igrave;nh dị b&ecirc;n b&atilde;i biển cung cấp m&oacute;n tapas v&agrave; l&agrave; nơi kh&aacute;ch c&oacute; thể đến để khi&ecirc;u vũ.<br />\r\nC&aacute;c cặp đ&ocirc;i đặc biệt th&iacute;ch địa điểm n&agrave;y &mdash; họ cho điểm 8,4 cho kỳ nghỉ d&agrave;nh cho 2 người.<br />\r\nCh&uacute;ng t&ocirc;i sử dụng ng&ocirc;n ngữ của bạn!</p>\r\n','3900000'),(9,'Ancient Huế Garden Houses',NULL,'3200000','acient_hue.jpg',5,4,3,'2021-04-20 11:58:05.128571','2021-04-20 13:31:31.077050',NULL,'1590000');
 /*!40000 ALTER TABLE `hotels` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `posts`
+--
+
+DROP TABLE IF EXISTS `posts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `posts` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `post_title` varchar(255) DEFAULT NULL,
+  `post_desc` varchar(255) DEFAULT NULL,
+  `post_content` text,
+  `post_image` varchar(255) DEFAULT NULL,
+  `post_meta` varchar(255) DEFAULT NULL,
+  `created_at` datetime(6) NOT NULL,
+  `updated_at` datetime(6) NOT NULL,
+  `post_view` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `posts`
+--
+
+LOCK TABLES `posts` WRITE;
+/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
+INSERT INTO `posts` VALUES (3,'10 điểm du lịch tham quan hấp dẫn nhất',NULL,NULL,'tintuc_sec_2.jpg','LANG CO','2021-04-19 02:38:54.812156','2021-04-20 12:09:00.001738',7),(4,'What is Lorem Ipsum 2?',NULL,NULL,'tintuc_sec_1.jpg','LANG CO','2021-04-19 02:41:03.385406','2021-04-20 12:08:11.195330',10);
+/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -299,7 +365,7 @@ CREATE TABLE `schema_migrations` (
 
 LOCK TABLES `schema_migrations` WRITE;
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` VALUES ('20210315061614'),('20210329064135'),('20210329065431'),('20210329070620'),('20210403125012'),('20210411030948'),('20210413082615'),('20210417131120'),('20210417131121');
+INSERT INTO `schema_migrations` VALUES ('20210315061614'),('20210329064135'),('20210329065431'),('20210329070620'),('20210403125012'),('20210411030948'),('20210413082615'),('20210417131120'),('20210417131121'),('20210418082847'),('20210419092440'),('20210419100205');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -343,4 +409,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-18 10:39:06
+-- Dump completed on 2021-04-20 20:32:19

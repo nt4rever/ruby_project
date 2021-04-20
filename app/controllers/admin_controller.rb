@@ -8,6 +8,7 @@ class AdminController < ApplicationController
 
   def account
     check_session
+    @taikhoan_active = 'active'
     @pagy, @all_account = pagy(User.all, item: 10)
   end
   

@@ -2,17 +2,20 @@ class ProductController < ApplicationController
     layout 'admin_layout'
     def product
         check_session 
+        @sanpham_active = 'active'
         @pagy, @all_product = pagy(Hotel.all.order(id: :desc), items: 5) 
     end
 
     def new
         check_session
+        @sanpham_active = 'active'
         @all_category = CategoryHotel.all
         @product = Hotel.new
     end
 
     def create
         check_session
+
         @product = Hotel.create(product_params)
         if @product.save
             flash[:success] = "Thêm sản phẩm thành công!"
@@ -38,6 +41,7 @@ class ProductController < ApplicationController
 
     def edit
         check_session
+        @sanpham_active = 'active'
         @all_category = CategoryHotel.all
         @product = Hotel.find(params[:id])
     end
@@ -56,7 +60,7 @@ class ProductController < ApplicationController
     
 
     def product_params
-        params.require(:product).permit(:name, :desc, :price,:image,:category_hotels_id, :content)
+        params.require(:product).permit(:name, :desc, :price, :price_discount, :image,:category_hotels_id, :content, :rating)
     end
 
     private

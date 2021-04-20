@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>LangCoBeach</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-     <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= stylesheet_link_tag 'khachsan', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'khachsan', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'detail', media: 'all', 'data-turbolinks-track': 'reload' %>
-     <%= stylesheet_link_tag 'tintuc', media: 'all', 'data-turbolinks-track': 'reload' %>
-     <%= stylesheet_link_tag 'gioithieu', media: 'all', 'data-turbolinks-track': 'reload' %>
-     <%
+    <%= stylesheet_link_tag 'tintuc', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'gioithieu', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%
 =begin%>
- <%= stylesheet_link_tag 'tintuc_chitiet', media: 'all', 'data-turbolinks-track': 'reload' %> 
-<%
+    <%= stylesheet_link_tag 'tintuc_chitiet', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%
 =end%>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
+<body>
     <%= yield %>
-  </body>
+    <script>
+        $(function() {
+            $('#customer_email_get').on('click', function() {
+                Swal.fire(
+                    'Thank you!',
+                    'Đăng ký nhận tin tức thành công!',
+                    'success'
+                )
+            });
+
+            $("#change_number_item").on('change', function() {
+                window.location = '/khachsan?show=' + this.value
+            });
+        });
+    </script>
+</body>
+
 </html>

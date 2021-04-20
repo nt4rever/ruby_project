@@ -36,10 +36,12 @@
                                 </div>
                             </div>
                             <div class="form_search_navbar flex-row">
-                                <input type="text" name="" id="" class="form-control">
+                                <%= form_tag(search_path, method: :get) do   %>
+                                <%= text_field_tag :text,"", class:'form-control', required: 'true' %>
                                 <div class="icon_search_navbar">
                                     <button type="submit" class="form-control"><i class="fa fa-search"></i></button>
                                 </div>
+                                <% end %>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -215,19 +217,23 @@
                                             <p class="text-muted location"><%= item.danhmuc.category_name %></p>
                                             <p class="text-dark title"><%= item.name  %></p>
                                             <p class="gia">
-                                                <!-- <span
-                                class="text-primary truoc"><strike>7,000,000
-                                    ₫</strike></span> -->
-                                                <span class="text-primary sau"><%= number_to_currency(item.price, unit: "đ",format: "%n %u", precision: 0)  %></span>
+                                                <% if item.price_discount==nil || item.price_discount == item.price %>
+                                                <span class="text-primary sau" itemid="2999000"> <%= number_to_currency(item.price, unit: "đ",format: "%n %u", precision: 0)  %></span></p>
+                                            <% else %>
+                                            <span class="text-primary truoc"><strike><%= number_to_currency(item.price, unit: "đ",format: "%n %u", precision: 0)  %></strike></span>
+                                            <span class="text-primary sau" itemid="2999000"> <%= number_to_currency(item.price_discount, unit: "đ",format: "%n %u", precision: 0)  %></span></p>
+                                            <% end %>
                                             </p>
                                             <div class="gioithieu">
                                                 <%= raw(item.desc)  %>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="sticker">
-                          <p>Giảm giá!</p>
-                      </div> -->
+                                    <% if item.price_discount!=nil && item.price_discount < item.price %>
+                                    <div class="sticker">
+                                        <p>Giảm giá!</p>
+                                    </div>
+                                    <% end %>
                                 </div>
                             </a>
                         </div>
@@ -322,37 +328,18 @@
             </div>
             <div class="noidung container">
                 <div class="row">
-                    <div class="col-sm-4 anh">
+                    <% @all_post.each do |item|%>
 
-                        <%= image_tag "img/tintuc_home_1.jpg" %>
-                    </div>
                     <div class="col-sm-4 tin">
-                        <h5>10 điểm du lịch tham quan hấp dẫn nhất</h5>
-                        <p>Toạ lạc trên đảo Hòn Tre với những bãi biển trong xanh quanh năm, Vinpearl Land được biết
-                            đến như “thiên đường của miền nhiệt đới”</p>
-                        <a href="../tintuc/html/nhatrang.html" %>Đọc thêm</a>
+                        <div class="anh mb-4">
+                            <%= image_tag(item.post_image.url, alt: 'Image') if item.post_image? %>
+                        </div>
+                        <h5><%= item.post_title %></h5>
+                        <p><%= raw(item.post_desc) %></p>
+                        <a href="<%= tintuc_chitiet_path(:id => item.id) %>" %>Đọc thêm</a>
                     </div>
-                    <div class="col-sm-4 anh">
-                        <%= image_tag "img/tintuc_home_2.jpg" %>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 tin">
-                        <h5>Du lịch Vũng Tàu: Cẩm nang từ A đến Z</h5>
-                        <p>Cách trung tâm thành phố Hồ Chí Minh chỉ khoảng 3 tiếng lái xe, với đường bờ biển trải
-                            dài 20km, Vũng Tàu là một trong những điểm đến yêu thích của du khách phía Nam.</p>
-                        <a href="../tintuc/html/vungtau.html" %>Đọc thêm</a>
-                    </div>
-                    <div class="col-sm-4 anh">
-                        <%= image_tag "img/tintuc_home_3jpg.jpg" %>
-                    </div>
-                    <div class="col-sm-4 tin">
-                        <h5>Du lịch Phú Quốc: Cẩm nang từ A đến Z</h5>
-                        <p>Phú Quốc là quần đảo xinh đẹp nằm sâu trong vùng vịnh Thái Lan, thuộc tỉnh Kiên Giang. Ở
-                            vùng biển phía Nam của tổ quốc, đảo Ngọc Phú Quốc – hòn đảo lớn nhất của Việt Nam, cũng
-                            là đảo lớn nhất trong quần thể 22 đảo tại đây.</p>
-                        <a href="../tintuc/html/phuquoc.html" %>Đọc thêm</a>
-                    </div>
+                    <% end %>
+
                 </div>
             </div>
         </div>
@@ -367,7 +354,7 @@
                     <div class="form_email">
                         <form action="">
                             <input type="text" class="inp_1 form-control" placeholder="Email của bạn">
-                            <input type="button" value="Đăng kí" class="form-control btn_1">
+                            <input type="button" value="Đăng kí" class="form-control btn_1" id="customer_email_get">
                         </form>
                     </div>
                 </div>

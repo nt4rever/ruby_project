@@ -2,11 +2,13 @@ class CategoryController < ApplicationController
   layout 'admin_layout'
   def category
     check_session
+    @danhmuc_active = "active"
     @pagy, @all_category = pagy(CategoryHotel.all, items: 10)
   end
 
   def new
     check_session
+    @danhmuc_active = "active"
     @category = CategoryHotel.new
   end
 
@@ -36,6 +38,7 @@ class CategoryController < ApplicationController
 
   def edit
     check_session
+    @danhmuc_active = "active"
     @category = CategoryHotel.find(params[:id])
   end
 

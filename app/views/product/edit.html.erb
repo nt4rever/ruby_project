@@ -28,12 +28,20 @@
                     <%=f.number_field :price, class:'form-control', required: 'true' %>
                 </div>
                 <div class="form-group">
+                    <label for="price">Giá giảm</label>
+                    <%=f.number_field :price_discount, class:'form-control', required: 'true' %>
+                </div>
+                <div class="form-group">
                     <label for="category">Danh mục</label>
                     <%=f.collection_select(:category_hotels_id ,@all_category,:id,:category_name, {:prompt=>true},{:class=>'form-control',:required =>'true'}) %>
                 </div>
                 <div class="form-group">
                     <label for="image">Ảnh</label>
                     <%= f.file_field :image, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                    <label for="image">Hạng/Sao:</label>
+                    <%= f.number_field :rating, class: 'form-control', required: 'true', min: "1", max: "5" %>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Mô tả</label>

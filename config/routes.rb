@@ -8,9 +8,13 @@ Rails.application.routes.draw do
   get "/khachsan", to: "articles#khachsan"
   get "/detail", to: "articles#detail"
   get "/tintuc", to: "articles#tintuc"
-  # get "/tintuc_chitiet", to: "articles#tintuc_chitiet"
+  get "/tintuc_chitiet", to: "articles#tintuc_chitiet"
   get "/gioithieu", to: "articles#gioithieu"
   get "/lienhe", to: "articles#lienhe"
+  get "search", to: "articles#search"
+  get "post_search", to: "articles#post_search"
+
+  resources :comments
 
   # users, session: controller login, register and logout
   get     "login"    => "session#new"
@@ -45,6 +49,18 @@ Rails.application.routes.draw do
        post 'create_gallery', to: 'gallery#create'
 
        get 'account', to: 'admin#account'
+
+
+       get 'post', to: 'post#post'
+       get 'new_post', to: 'post#new'
+       post 'create_post', to: 'post#create'
+       get 'edit_post', to: 'post#edit'
+       post 'update_post', to: 'post#update'
+       get 'delete_post', to: 'post#destroy'
+
+       get 'all_comments', to: 'comments#index'
+       get 'delete_comment', to: 'comments#destroy'
+
   end
   
 end

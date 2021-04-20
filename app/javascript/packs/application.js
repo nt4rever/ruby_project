@@ -6,19 +6,22 @@
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
+import Swal from 'sweetalert2';
 import "channels"
 
-
+window.Swal = Swal;
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 require("jquery/src/jquery")
+
 
 import '../stylesheets/application';
 import "bootstrap"
 
 import "@fortawesome/fontawesome-free/js/all";
 import "./jquery_easing.js"
+
 
 require('admin-lte');
 require('isotope-layout')
@@ -35,9 +38,13 @@ $(function () {
         itemSelector: '.khoisp',
         layoutMode: 'masonry'
     });
-
 })
 
 
+
 require("trix")
+
 require("@rails/actiontext")
+
+
+

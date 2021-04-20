@@ -45,13 +45,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<%= category_path %>" class="nav-link">
+                            <a href="<%= category_path %>" class="nav-link <%= @danhmuc_active%>">
                                 <i class="fas fa-bars nav-icon"></i>
                                 <p>Danh mục</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<%= product_path %>" class="nav-link">
+                            <a href="<%= product_path %>" class="nav-link <%= @sanpham_active%>">
                                 <i class="fas fa-hotel nav-icon"></i>
                                 <p>Sản phẩm</p>
                             </a>
@@ -61,7 +61,7 @@
 
 
 
-                <li class="nav-item">
+                <li class="nav-item  menu-open">
                     <a href="#" class="nav-link">
                       <i class="fas fa-archive nav-icon"></i>
                         <p>
@@ -71,7 +71,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<%= all_comments_path %>" class="nav-link">
+                            <a href="<%= all_comments_path %>" class="nav-link <%= @binhluan_active%>">
                                 <i class="fas fa-comments nav-icon"></i>
                                 <p>
                                     Bình luận
@@ -79,7 +79,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<%= post_path %>" class="nav-link">
+                            <a href="<%= post_path %>" class="nav-link <%= @tintuc_active%>">
                                 <i class="fas fa-newspaper nav-icon"></i>
                                 <p>
                                     Tin tức
@@ -87,7 +87,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<%= account_path %>" class="nav-link">
+                            <a href="<%= account_path %>" class="nav-link <%= @taikhoan_active%>">
                               <i class="fas fa-user-circle nav-icon"></i>
                                 <p>Tài khoản</p>
                             </a>

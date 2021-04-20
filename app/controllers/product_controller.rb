@@ -2,11 +2,13 @@ class ProductController < ApplicationController
     layout 'admin_layout'
     def product
         check_session 
+        @sanpham_active = 'active'
         @pagy, @all_product = pagy(Hotel.all.order(id: :desc), items: 5) 
     end
 
     def new
         check_session
+        @sanpham_active = 'active'
         @all_category = CategoryHotel.all
         @product = Hotel.new
     end
@@ -39,6 +41,7 @@ class ProductController < ApplicationController
 
     def edit
         check_session
+        @sanpham_active = 'active'
         @all_category = CategoryHotel.all
         @product = Hotel.find(params[:id])
     end

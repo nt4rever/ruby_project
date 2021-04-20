@@ -33,7 +33,7 @@
                                     <i class="fa fa-search"></i>
                                 </div>
                             </div>
-                             <div class="form_search_navbar flex-row">
+                            <div class="form_search_navbar flex-row">
                                 <%= form_tag(search_path, method: :get) do   %>
                                 <%= text_field_tag :text,"", class:'form-control', required: 'true' %>
                                 <div class="icon_search_navbar">
@@ -78,8 +78,10 @@
                 <div class="row">
                     <div class="sidebar col-lg-3">
                         <div class="timkiem">
-                            <input type="text" name="" id="" class="form-control">
+                            <%= form_tag(post_search_path, method: :get) do   %>
+                            <%= text_field_tag :text,"", class:'form-control', required: 'true' %>
                             <button class="btn btn-success"><i class="fa fa-search"></i></button>
+                            <% end %>
                         </div>
                         <div class="tieude">
                             <h5>BÀI VIẾT MỚI NHẤT</h5>

@@ -3,12 +3,13 @@ class PostController < ApplicationController
 
     def post
         check_session
+        @tintuc_active = 'active'
         @pagy, @all_post = pagy(Post.all, items: 10)
     end
  
     def new
         check_session
-        
+        @tintuc_active = 'active'
     end
 
     def create
@@ -25,6 +26,7 @@ class PostController < ApplicationController
 
     def  edit 
         check_session
+        @tintuc_active = 'active'
         @post = Post.find(params[:id])
     end
 

@@ -102,6 +102,14 @@
                             <% end %>
                         </div>
                     </aside>
+                    <select class="form-control" id="change_number_item" aria-label="Default select example" style="width:140px">
+                        <% if session[:show]%>
+                        <option selected disabled>Hiển thị: <%= session[:show] %></option>
+                        <% end %>
+                        <option value="4">4 khách sạn</option>
+                        <option value="6">6 khách sạn</option>
+                        <option value="10">10 khách sạn</option>
+                    </select>
                 </div>
                 <div class="col-lg-9 sanpham">
                     <% if @all_product %>

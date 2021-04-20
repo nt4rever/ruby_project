@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
     layout 'admin_layout'
     def index 
         check_session
+        @binhluan_active = 'active'
         @pagy, @all_comment = pagy(Comment.all.order(id: :desc), items: 15)
     end 
 

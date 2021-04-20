@@ -6,10 +6,20 @@ class ArticlesController < ApplicationController
   end
   def khachsan
     @all_category = CategoryHotel.all
+    if params[:show]
+      session["show"] = params[:show]
+    end
+
+    if session["show"]
+      @show = session["show"] 
+    else  
+      @show = 6
+    end 
+
     if params[:id]
-      @pagy, @all_product = pagy(CategoryHotel.find(params[:id]).sanpham.order("id DESC"), items: 4)
+      @pagy, @all_product = pagy(CategoryHotel.find(params[:id]).sanpham.order("id DESC"), items: @show)
     else 
-      @pagy, @all_product = pagy(Hotel.all.order("id DESC"), items: 4)
+      @pagy, @all_product = pagy(Hotel.all.order("id DESC"), items: @show)
     end
   end
   def detail
@@ -46,6 +56,12 @@ class ArticlesController < ApplicationController
   def search 
     @all_category = CategoryHotel.all
     @pagy, @all_product = pagy(Hotel.where("name LIKE ?","%"+params[:text]+"%").order("id DESC"), items: 4)
+    render "khachsan"
+  end
+
+  def post_search
+    @pagy, @all_post = pagy(Post.where("post_title LIKE ?","%"+params[:text]+"%").order("id DESC"), items: 3)
+    render "tintuc"
   end
   
 end

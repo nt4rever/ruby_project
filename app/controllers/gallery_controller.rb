@@ -2,11 +2,13 @@ class GalleryController < ApplicationController
     layout "admin_layout"
     def show
         check_session
+        @sanpham_active = 'active'
         @gallery = GalleryHotel.where("hotels_id = :id",{id: params[:id]})
     end
 
     def new
         check_session
+        @sanpham_active = 'active'
         @gallery = GalleryHotel.new
         
     end

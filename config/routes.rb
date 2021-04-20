@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/gioithieu", to: "articles#gioithieu"
   get "/lienhe", to: "articles#lienhe"
   get "search", to: "articles#search"
+  get "post_search", to: "articles#post_search"
 
   resources :comments
 

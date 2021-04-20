@@ -35,6 +35,7 @@
                              <th>name</th>
                              <th>price</th>
                              <th>price_discount</th>
+                             <th>rank</th>
                              <th>category_id</th>
                              <th>updated_at</th>
                              <th>edit</th>
@@ -58,6 +59,9 @@
                              </td>
                              <td>
                                  <%= number_to_currency(pro.price_discount, unit: "đ",format: "%n %u", precision: 0)  %>
+                             </td>
+                              <td>
+                                 <%= pro.rating  %>
                              </td>
                              <td>
                                  <%= pro.category_hotels_id  %>

@@ -40,11 +40,15 @@
                     <%= f.file_field :image, class: 'form-control', required: 'true' %>
                 </div>
                 <div class="form-group">
+                    <label for="image">Hạng/Sao:</label>
+                    <%= f.number_field :rating, class: 'form-control', required: 'true', min: "1", max: "5" %>
+                </div>
+                <div class="form-group">
                     <label for="exampleInputPassword1">Mô tả</label>
                     <div class='field'><%= f.rich_text_area :desc %></div>
                 </div>
 
-                 <div class="form-group">
+                <div class="form-group">
                     <label for="exampleInputPassword1">Chi tiết</label>
                     <div class='field'><%= f.rich_text_area :content %></div>
                 </div>

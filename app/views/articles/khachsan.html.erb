@@ -138,12 +138,17 @@
                                 <p class="gioithieu">
                                     <%= raw(pro.desc)  %>
                                 </p>
+
                                 <p class="rank_star">
+                                    <% @i=0 %>
+                                    <% while @i < pro.rating do %>
                                     <span class="yellow_star"><i class="fa fa-star"></i></span>
-                                    <span class="yellow_star"><i class="fa fa-star"></i></span>
-                                    <span class="yellow_star"><i class="fa fa-star"></i></span>
-                                    <span class="yellow_star"><i class="fa fa-star"></i></span>
+                                    <% @i+=1 %>
+                                    <% end %>
+                                    <% while @i < 5 do %>
                                     <span class="black_star"><i class="fa fa-star"></i></span>
+                                    <% @i+=1 %>
+                                    <% end %>
                                     <span class="float-right text-muted small"><i class="fa fa-heart"></i> Đã xem
                                         <span id="count_view"><%= pro.view%></span> </i></span>
                                 </p>

@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Đổi mật khẩu <%= @account.lastName%></h3>
+            </div>
+            <section class="content" style="min-height: auto;display: flex;justify-content: center;">
+                <% flash.each do |key, value| %>
+                <div class="row">
+                    <div class="alert alert-<%= key %>">
+                        <%= value %>
+                    </div>
+                </div>
+                <% end %>
+            </section>
+
+            <%= form_for:account,url: update_account_path(:id => @account.id) do |f| %>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="category_name">Tên </label>
+                    <%=f.text_field :firstName, class:'form-control', required: 'true' %>
+                </div>
+                <div class="form-group">
+                    <label for="category_name">Tên </label>
+                    <%=f.text_field :lastName, class:'form-control', required: 'true' %>
+                </div>
+                <div class="form-group">
+                    <label for="category_name">Role </label>
+                    <%=f.text_field :role, class:'form-control', required: 'true' %>
+                </div>
+                <div class="form-group">
+                    <label for="category_name">Mật khẩu </label>
+                    <%= f.password_field :password, class: "form-control", placeholder: "Mật khẩu",required: "true" %>
+                </div>
+                <div class="form-group">
+                    <label for="category_name">Nhập lại mật khẩu </label>
+                    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Nhập lại mật khẩu",required: "true" %>
+                </div>
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <%= f.submit "Submit", class: 'btn btn-primary' %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>

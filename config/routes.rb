@@ -67,6 +67,8 @@ Rails.application.routes.draw do
        get 'order_confirm', to: 'order#confirm'
        get 'order_cancel', to: 'order#cancel'
 
+       get 'change_pass' , to: "admin#change_pass"
+        post 'update_account', to: "admin#update"
   end
   
 end

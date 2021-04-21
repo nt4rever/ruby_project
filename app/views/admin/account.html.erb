@@ -35,6 +35,7 @@
                              <th>email</th>
                              <th>role</th>
                              <th>updated_at</th>
+                             <th>pass</th>
                          </tr>
                      </thead>
                      <tbody>
@@ -55,6 +56,11 @@
                              </td>
                              <td>
                                  <%= acc.updated_at %>
+                             </td>
+                              <td>
+                                 <a href="<%= change_pass_path(:id =>acc.id) %>" class="btn btn-sm btn-outline-primary" onclick='return confirm("Doi mk!");'>
+                                     <i class="far fa-edit"></i>
+                                 </a>
                              </td>
                          </tr>
                          <% end %>

@@ -5,6 +5,9 @@
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
+//= require pickadate/picker
+//= require pickadate/picker.date
+//= require pickadate/picker.time
 import * as ActiveStorage from "@rails/activestorage"
 import Swal from 'sweetalert2';
 import "channels"
@@ -15,6 +18,8 @@ Turbolinks.start()
 ActiveStorage.start()
 require("jquery/src/jquery")
 
+
+import "daterangepicker"
 
 import '../stylesheets/application';
 import "bootstrap"
@@ -38,6 +43,9 @@ $(function () {
         itemSelector: '.khoisp',
         layoutMode: 'masonry'
     });
+
+    $('#config-demo').daterangepicker();
+
 })
 
 

@@ -55,6 +55,7 @@ class ArticlesController < ApplicationController
   end
 
   def list_order
+    @all_order = Order.where(["user_id = :u", { u: session[:customer_id] }])
   end
 
   def search 

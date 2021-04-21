@@ -103,8 +103,13 @@
                         <%= raw(@product.desc)%>
                     </div>
                     <div class="datngay1">
+                    <% if session[:username]  %>
                         <input type="button" value="ĐẶT NGAY" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-                        <input type="button" value="THÊM VÀO GIỎ HÀNG" class="btn btn-outline-success" data-toggle="modal" data-target="#myModal1">
+                    <% else%>
+                    <a href="<%= login_path %>">
+                    <span class="badge badge-info">Đăng nhập để đặt phòng</span>
+                    </a>
+                    <% end %>
                     </div>
                     <hr>
                     <div class="ghichu">
@@ -161,6 +166,12 @@
                     <br>
                     <p>Email</p>
                     <%=f.email_field :email, class:'form-control', required: 'true' %>
+                    <br>
+                    <p>Thời gian đặt phòng</p>
+                     <%=f.text_field :time, class:'form-control', id: "config-demo", required: 'true' %>
+                    <br>
+                    <p>Chọn loại phòng</p>
+                     <%= f.select :type_hotel , options_for_select(["Single bed room", "Twin bed room", "Double bed room", "Triple bed room"],:disabled => ["Select One"])  %>
                     <br>
                     <p>Số điện thoại</p>
                     <%=f.text_field :phone, class:'form-control', required: 'true' %>

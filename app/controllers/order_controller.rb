@@ -9,7 +9,7 @@ class OrderController < ApplicationController
         @order = Order.new order_params
         @order.status = 0
         if @order.save 
-            redirect_to articles_path
+            redirect_to list_order_path
         else  
             
         end
@@ -38,7 +38,7 @@ class OrderController < ApplicationController
      # hàm lấy dữ liệu từ form
      private
      def order_params
-       params.require(:order).permit :name, :email, :phone, :note, :user_id, :hotel_id
+       params.require(:order).permit :name, :email, :phone, :note, :user_id, :hotel_id, :time, :type_hotel
      end
 
 end

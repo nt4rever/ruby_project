@@ -63,3 +63,5 @@ gem "pagy"
 gem 'image_processing'
 
 gem "mini_magick"
+
+gem 'pickadate-rails'

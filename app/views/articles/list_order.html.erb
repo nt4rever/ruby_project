@@ -88,51 +88,39 @@
                 <h3>Các sản phẩm trong giỏ hàng</h3>
             </div>
             <div class="container">
+            <% @all_order.each do |item| %>
                 <div class="row">
                     <div class="col-sm-2 anh">
-                        <img src="../img/family-fun.jpg" alt="">
+                        <%= image_tag(item.hotel.image.url, alt: 'Image') %>
                     </div>
-                    <div class="col-sm-5 tieude">
-                        <a href="../khachsan/ks1/html/angsana.html">
-                            <h5>Angsana Lang Co</h5>
+                    <div class="col-sm-4 tieude">
+                        <a href="<%= detail_path(:id => item.hotel.id)  %>">
+                            <h5><%= item.hotel.name  %></h5>
                         </a>
-                        <p>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co. Angsana Lang Co là resort hiện đại
-                            với nội thất đầy phong cách. Các chỗ nghỉ lắp máy điều hòa tại đây được cung cấp Wi-Fi miễn
-                            phí. Resort này có 2 nhà hàng và 1 quầy bar cũng như spa và hồ bơi ngoài trời.</p>
+                        <p>Tên: <%= item.name  %></p>
+                        <p>Email: <%= item.email  %></p>
+                        <p>Số điện thoại: <%= item.phone  %></p>
+                        <p>Thời gian nhận phòng: <%= item.time  %></p>
+                        <p>Loại phòng: <%= item.type_hotel  %></p>
+                        <p>Ghi chú: <%= item.note  %></p>
                     </div>
                     <div class="col-sm-2 soluong">
-                        <h6>Số lượng: 1</h6>
+                        <h6>Thời gian đặt phòng: <%= item.updated_at.to_formatted_s(:long_ordinal)  %></h6>
                     </div>
                     <div class="col-sm-2 gia">
-                        <h6>Giá: 3,999,999 đ</h6>
+                        <h6>Giá: <%= number_to_currency(item.hotel.price_discount, unit: "đ",format: "%n %u", precision: 0)  %></h6>
                     </div>
-                    <div class="col-sm-1">
-                        <input type="button" value="Xoá" class="btn-xoa btn btn-danger">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-2 anh">
-                        <img src="../img/family-fun.jpg" alt="">
-                    </div>
-                    <div class="col-sm-5 tieude">
-                        <a href="../khachsan/ks1/html/angsana.html">
-                            <h5>Angsana Lang Co</h5>
-                        </a>
-
-                        <p>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co. Angsana Lang Co là resort hiện đại
-                            với nội thất đầy phong cách. Các chỗ nghỉ lắp máy điều hòa tại đây được cung cấp Wi-Fi miễn
-                            phí. Resort này có 2 nhà hàng và 1 quầy bar cũng như spa và hồ bơi ngoài trời.</p>
-                    </div>
-                    <div class="col-sm-2 soluong">
-                        <h6>Số lượng: 1</h6>
-                    </div>
-                    <div class="col-sm-2 gia">
-                        <h6>Giá: 3,999,999 đ</h6>
-                    </div>
-                    <div class="col-sm-1">
-                        <input type="button" value="Xoá" class=" btn-xoa btn btn-danger">
+                    <div class="col-sm-2">
+                        <% if item.status==0 %>
+                                   <span class="badge badge-secondary btn-xoa">Đang chờ xử lý</span>
+                                <% elsif item.status==1 %>
+                                  <span class="badge badge-success btn-xoa">Đã xác nhận</span>
+                                <% else %>
+                                   <span class="badge badge-danger btn-xoa">Đã hủy</span>
+                                <% end %>
                     </div>
                 </div>
+            <% end %>
                 <div class="dathang">
                     <input type="button" value="Đặt ngay" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
                 </div>

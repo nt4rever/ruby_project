@@ -97,19 +97,19 @@
                     </div>
                     <div class="is-divider small"></div>
                     <div class="gia">
-                        <h4><%= number_to_currency(@product.price, unit: "đ",format: "%n %u", precision: 0)  %></h4>
+                        <h4><%= number_to_currency(@product.price_discount, unit: "đ",format: "%n %u", precision: 0)  %></h4>
                     </div>
                     <div class="gioithieu">
                         <%= raw(@product.desc)%>
                     </div>
                     <div class="datngay1">
-                    <% if session[:username]  %>
+                        <% if session[:username]  %>
                         <input type="button" value="ĐẶT NGAY" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-                    <% else%>
-                    <a href="<%= login_path %>">
-                    <span class="badge badge-info">Đăng nhập để đặt phòng</span>
-                    </a>
-                    <% end %>
+                        <% else%>
+                        <a href="<%= login_path %>">
+                            <span class="badge badge-info">Đăng nhập để đặt phòng</span>
+                        </a>
+                        <% end %>
                     </div>
                     <hr>
                     <div class="ghichu">
@@ -168,10 +168,10 @@
                     <%=f.email_field :email, class:'form-control', required: 'true' %>
                     <br>
                     <p>Thời gian đặt phòng</p>
-                     <%=f.text_field :time, class:'form-control', id: "config-demo", required: 'true' %>
+                    <%=f.text_field :time, class:'form-control', id: "config-demo", required: 'true' %>
                     <br>
                     <p>Chọn loại phòng</p>
-                     <%= f.select :type_hotel , options_for_select(["Single bed room", "Twin bed room", "Double bed room", "Triple bed room"],:disabled => ["Select One"])  %>
+                    <%= f.select(:type_hotel, ["Single bed room", "Twin bed room", "Double bed room", "Triple bed room"], {}, { :class => 'form-control' }) %>
                     <br>
                     <p>Số điện thoại</p>
                     <%=f.text_field :phone, class:'form-control', required: 'true' %>
@@ -248,7 +248,7 @@
         <div class="carousel" data-flickity='{ "autoPlay": true }'>
             <% @product.thuvienanh.path.each do |p| %>
             <div class="carousel-cell">
-                <%= image_tag(p.url, alt: 'Image') %>
+                <%= image_tag(p.url, alt: 'Image', style: "width:100%") %>
             </div>
             <% end %>
 

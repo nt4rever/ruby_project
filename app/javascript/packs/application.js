@@ -19,7 +19,7 @@ ActiveStorage.start()
 require("jquery/src/jquery")
 
 
-import "daterangepicker"
+import "daterangepicker/daterangepicker"
 
 import '../stylesheets/application';
 import "bootstrap"

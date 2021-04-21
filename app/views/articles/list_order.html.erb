@@ -78,52 +78,50 @@
                 </div>
             </nav>
         </header>
-
-        <div class="maingh">
-            <p>Chưa có sản phẩm nào trong giỏ hàng.</p>
-            <a href="khachsan.html" class="btn btn-primary">QUAY TRỞ LẠI CỬA HÀNG</a>
-        </div>
         <div class="demogh">
             <div class="tieude container">
-                <h3>Các sản phẩm trong giỏ hàng</h3>
+                <h3>Đơn hàng của bạn</h3>
             </div>
             <div class="container">
-            <% @all_order.each do |item| %>
+                <% @all_order.each do |item| %>
                 <div class="row">
                     <div class="col-sm-2 anh">
                         <%= image_tag(item.hotel.image.url, alt: 'Image') %>
                     </div>
-                    <div class="col-sm-4 tieude">
+                    <div class="col-sm-3 tieude p-1">
                         <a href="<%= detail_path(:id => item.hotel.id)  %>">
                             <h5><%= item.hotel.name  %></h5>
                         </a>
                         <p>Tên: <%= item.name  %></p>
                         <p>Email: <%= item.email  %></p>
                         <p>Số điện thoại: <%= item.phone  %></p>
+
+                    </div>
+                    <div class="col-sm-3 tieude  p-1">
+
                         <p>Thời gian nhận phòng: <%= item.time  %></p>
                         <p>Loại phòng: <%= item.type_hotel  %></p>
                         <p>Ghi chú: <%= item.note  %></p>
-                    </div>
-                    <div class="col-sm-2 soluong">
-                        <h6>Thời gian đặt phòng: <%= item.updated_at.to_formatted_s(:long_ordinal)  %></h6>
+                        <p>Thời gian đặt phòng: <%= item.updated_at.to_formatted_s(:long_ordinal)  %></p>
                     </div>
                     <div class="col-sm-2 gia">
                         <h6>Giá: <%= number_to_currency(item.hotel.price_discount, unit: "đ",format: "%n %u", precision: 0)  %></h6>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-2 soluong">
                         <% if item.status==0 %>
-                                   <span class="badge badge-secondary btn-xoa">Đang chờ xử lý</span>
-                                <% elsif item.status==1 %>
-                                  <span class="badge badge-success btn-xoa">Đã xác nhận</span>
-                                <% else %>
-                                   <span class="badge badge-danger btn-xoa">Đã hủy</span>
-                                <% end %>
+                        <span class="badge badge-secondary btn-xoa p-2 mr-2">Đang chờ xử lý</span>
+                        <a href="<%= order_cancel_path(:id=>item.id) %>" class="btn btn-sm btn-outline-danger" onclick='return confirm("Hủy đơn này!")'>
+                            <i class="fas fa-window-close"></i>
+                        </a>
+                        <% elsif item.status==1 %>
+                        <span class="badge badge-success btn-xoa p-2">Đã xác nhận</span>
+                        <% else %>
+                        <span class="badge badge-danger btn-xoa p-2">Đã hủy</span>
+                        <% end %>
                     </div>
                 </div>
-            <% end %>
-                <div class="dathang">
-                    <input type="button" value="Đặt ngay" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
-                </div>
+                <% end %>
+
             </div>
         </div>
 

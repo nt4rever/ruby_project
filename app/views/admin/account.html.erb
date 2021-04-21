@@ -35,7 +35,7 @@
                              <th>email</th>
                              <th>role</th>
                              <th>updated_at</th>
-                             <th>pass</th>
+                             <th>edit</th>
                          </tr>
                      </thead>
                      <tbody>
@@ -58,7 +58,7 @@
                                  <%= acc.updated_at %>
                              </td>
                               <td>
-                                 <a href="<%= change_pass_path(:id =>acc.id) %>" class="btn btn-sm btn-outline-primary" onclick='return confirm("Doi mk!");'>
+                                 <a href="<%= change_pass_path(:id =>acc.id) %>" class="btn btn-sm btn-outline-primary" onclick='return confirm("Thay đổi thông tin tài khoản này!");'>
                                      <i class="far fa-edit"></i>
                                  </a>
                              </td>

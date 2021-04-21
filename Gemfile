@@ -65,3 +65,4 @@ gem 'image_processing'
 gem "mini_magick"
 
 gem 'pickadate-rails'
+gem 'bootstrap-daterangepicker-rails'

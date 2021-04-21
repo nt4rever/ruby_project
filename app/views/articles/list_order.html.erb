@@ -20,11 +20,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<%= tintuc_path %>">TIN TỨC</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="<%= gioithieu_path %>">GIỚI THIỆU</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="lienhe.html">LIÊN HỆ</a>
+                            <a class="nav-link" href="<%= lienhe_path %>">LIÊN HỆ</a>
                         </li>
                         <li class="nav-item search_nav_cha">
                             <div class="search">
@@ -79,39 +79,62 @@
             </nav>
         </header>
 
-
-        <div class="banner">
-            <div class="overlay">
-            </div>
-            <div class="noidung text-center">
-                <h3>NT_4rever</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sequi ipsam earum officia
-                    cupiditate
-                    mollitia alias rerum dolores vero blanditiis, possimus dicta. Saepe tempora sapiente ullam et quo
-                    perspiciatis debitis.</p>
-            </div>
+        <div class="maingh">
+            <p>Chưa có sản phẩm nào trong giỏ hàng.</p>
+            <a href="khachsan.html" class="btn btn-primary">QUAY TRỞ LẠI CỬA HÀNG</a>
         </div>
-        <div class="text_gioithieu">
+        <div class="demogh">
+            <div class="tieude container">
+                <h3>Các sản phẩm trong giỏ hàng</h3>
+            </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4">
-                        <h4>MỤC TIÊU</h4>
-                        <p id="div_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                            euismod tincidunt
-                            ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <div class="col-sm-2 anh">
+                        <img src="../img/family-fun.jpg" alt="">
                     </div>
-                    <div class="col-sm-4">
-                        <h4>SỨ MỆNH</h4>
-                        <p id="div_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                            euismod tincidunt
-                            ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <div class="col-sm-5 tieude">
+                        <a href="../khachsan/ks1/html/angsana.html">
+                            <h5>Angsana Lang Co</h5>
+                        </a>
+                        <p>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co. Angsana Lang Co là resort hiện đại
+                            với nội thất đầy phong cách. Các chỗ nghỉ lắp máy điều hòa tại đây được cung cấp Wi-Fi miễn
+                            phí. Resort này có 2 nhà hàng và 1 quầy bar cũng như spa và hồ bơi ngoài trời.</p>
                     </div>
-                    <div class="col-sm-4">
-                        <h4>TƯƠNG LAI</h4>
-                        <p id="div_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                            euismod tincidunt
-                            ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <div class="col-sm-2 soluong">
+                        <h6>Số lượng: 1</h6>
                     </div>
+                    <div class="col-sm-2 gia">
+                        <h6>Giá: 3,999,999 đ</h6>
+                    </div>
+                    <div class="col-sm-1">
+                        <input type="button" value="Xoá" class="btn-xoa btn btn-danger">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 anh">
+                        <img src="../img/family-fun.jpg" alt="">
+                    </div>
+                    <div class="col-sm-5 tieude">
+                        <a href="../khachsan/ks1/html/angsana.html">
+                            <h5>Angsana Lang Co</h5>
+                        </a>
+
+                        <p>Trải nghiệm dịch vụ đẳng cấp thế giới ở Angsana Lang Co. Angsana Lang Co là resort hiện đại
+                            với nội thất đầy phong cách. Các chỗ nghỉ lắp máy điều hòa tại đây được cung cấp Wi-Fi miễn
+                            phí. Resort này có 2 nhà hàng và 1 quầy bar cũng như spa và hồ bơi ngoài trời.</p>
+                    </div>
+                    <div class="col-sm-2 soluong">
+                        <h6>Số lượng: 1</h6>
+                    </div>
+                    <div class="col-sm-2 gia">
+                        <h6>Giá: 3,999,999 đ</h6>
+                    </div>
+                    <div class="col-sm-1">
+                        <input type="button" value="Xoá" class=" btn-xoa btn btn-danger">
+                    </div>
+                </div>
+                <div class="dathang">
+                    <input type="button" value="Đặt ngay" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
                 </div>
             </div>
         </div>

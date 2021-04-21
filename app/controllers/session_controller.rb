@@ -18,6 +18,6 @@ class SessionController < ApplicationController
   def destroy
     session.delete(:username)
     session.delete(:customer_id)
-    redirect_to :root 
+    redirect_back(fallback_location: root_path)
   end
 end

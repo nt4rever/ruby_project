@@ -51,11 +51,11 @@
                              </td>
                              <td>
                                 <% if item.status==0 %>
-                                    Mới
+                                   <span class="badge badge-secondary">Đang chờ xữ lý</span>
                                 <% elsif item.status==1 %>
-                                    Xác nhận
+                                  <span class="badge badge-success">Đã xác nhận</span>
                                 <% else %>
-                                    Hủy
+                                   <span class="badge badge-danger">Đã hủy</span>
                                 <% end %>
                              </td>
                              <td>
@@ -68,7 +68,9 @@
                                  <%= item.email  %>
                              </td>
                              <td>
+                                <a href="<%= detail_path(:id => item.hotel_id) %>" target="_blank">
                                  <%= item.hotel.name %>
+                                 </a>
                              </td>
                              <td>
                                  <%= item.updated_at.to_formatted_s(:long_ordinal) %>

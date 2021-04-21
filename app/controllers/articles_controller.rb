@@ -50,7 +50,11 @@ class ArticlesController < ApplicationController
 
   def gioithieu
   end
+  
   def lienhe
+  end
+
+  def list_order
   end
 
   def search 

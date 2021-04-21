@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "search", to: "articles#search"
   get "post_search", to: "articles#post_search"
   post "new_order", to: "order#create"
+  get "list_order", to: "articles#list_order"
 
   resources :comments
 

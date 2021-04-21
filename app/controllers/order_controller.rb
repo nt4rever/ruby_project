@@ -1,6 +1,7 @@
 class OrderController < ApplicationController
     layout "admin_layout"
     def index
+        @donhang_active = 'active'
         @pagy, @all_order = pagy(Order.all, items: 10)
     end
 

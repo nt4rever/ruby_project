@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_100205) do
+ActiveRecord::Schema.define(version: 2021_04_21_034957) do
 
   create_table "action_text_rich_texts", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -101,6 +101,20 @@ ActiveRecord::Schema.define(version: 2021_04_19_100205) do
     t.index ["category_hotels_id"], name: "index_hotels_on_category_hotels_id"
   end
 
+  create_table "orders", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "note"
+    t.bigint "user_id", null: false
+    t.bigint "hotel_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "status"
+    t.index ["hotel_id"], name: "index_orders_on_hotel_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.string "post_title"
     t.string "post_desc"
@@ -120,6 +134,7 @@ ActiveRecord::Schema.define(version: 2021_04_19_100205) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "email", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -128,4 +143,6 @@ ActiveRecord::Schema.define(version: 2021_04_19_100205) do
   add_foreign_key "comments", "users"
   add_foreign_key "gallery_hotels", "hotels", column: "hotels_id"
   add_foreign_key "hotels", "category_hotels", column: "category_hotels_id"
+  add_foreign_key "orders", "hotels"
+  add_foreign_key "orders", "users"
 end

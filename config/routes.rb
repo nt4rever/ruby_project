@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/lienhe", to: "articles#lienhe"
   get "search", to: "articles#search"
   get "post_search", to: "articles#post_search"
+  post "new_order", to: "order#create"
 
   resources :comments
 
@@ -60,6 +61,10 @@ Rails.application.routes.draw do
 
        get 'all_comments', to: 'comments#index'
        get 'delete_comment', to: 'comments#destroy'
+
+       get 'all_order', to: 'order#index'
+       get 'order_confirm', to: 'order#confirm'
+       get 'order_cancel', to: 'order#cancel'
 
   end
   

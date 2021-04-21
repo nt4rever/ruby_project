@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
     if session["show"]
       @show = session["show"] 
     else  
-      @show = 6
+      @show = 4
     end 
 
     if params[:id]

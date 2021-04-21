@@ -159,19 +159,23 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
+                <%= form_for:order,url: new_order_path do |f| %>
                     <p>Tên của bạn</p>
-                    <input type="text" class="form-control">
+                    <%=f.text_field :name, class:'form-control', required: 'true' %>
                     <br>
                     <p>Email</p>
-                    <input type="email" name="" id="" class="form-control">
+                    <%=f.email_field :email, class:'form-control', required: 'true' %>
                     <br>
                     <p>Số điện thoại</p>
-                    <input type="number" name="" id="" class="form-control">
+                    <%=f.text_field :phone, class:'form-control', required: 'true' %>
                     <br>
                     <p>Ghi chú</p>
-                    <input type="text" class="form-control">
+                    <%=f.text_field :note, class:'form-control', required: 'true' %>
                     <br>
-                    <input type="button" value="Gửi đi" class="btn btn-success">
+                    <%=f.hidden_field :user_id, class:'form-control', required: 'true', value: session[:customer_id] %>
+                    <%=f.hidden_field :hotel_id, class:'form-control', required: 'true', value: @product.id %>
+                    <%= f.submit "Gửi đi", class: 'btn btn-success' %>
+                 <% end %>
                 </div>
 
                 <!-- Modal footer -->

@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
     else 
       @pagy, @all_product = pagy(Hotel.all.order("id DESC"), items: @show)
     end
+    
   end
   def detail
     @comments = Comment.where(["hotel_id = :u", { u: params[:id] }])
@@ -31,6 +32,7 @@ class ArticlesController < ApplicationController
       @product.view = 1
     end
     @product.save
+    
   end
 
   def tintuc
@@ -55,7 +57,7 @@ class ArticlesController < ApplicationController
   end
 
   def list_order
-    @all_order = Order.where(["user_id = :u", { u: session[:customer_id] }])
+    @all_order = Order.where(["user_id = :u", { u: session[:customer_id] }]).order("id DESC")
   end
 
   def search 

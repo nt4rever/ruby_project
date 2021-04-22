@@ -4,7 +4,7 @@ class PostController < ApplicationController
     def post
         check_session
         @tintuc_active = 'active'
-        @pagy, @all_post = pagy(Post.all, items: 10)
+        @pagy, @all_post = pagy(Post.all.order("id DESC"), items: 10)
     end
  
     def new

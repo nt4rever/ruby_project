@@ -5,9 +5,6 @@
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
-//= require pickadate/picker
-//= require pickadate/picker.date
-//= require pickadate/picker.time
 import * as ActiveStorage from "@rails/activestorage"
 import Swal from 'sweetalert2';
 import "channels"
@@ -28,6 +25,10 @@ import "@fortawesome/fontawesome-free/js/all";
 import "./jquery_easing.js"
 
 
+require("trix")
+
+require("@rails/actiontext")
+
 require('admin-lte');
 require('isotope-layout')
 var jQueryBridget = require('jquery-bridget');
@@ -38,21 +39,16 @@ jQueryBridget('isotope', Isotope, $);
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
     $('.toast').toast('show');
-    $('.sanpham').isotope({
-        // options
-        itemSelector: '.khoisp',
-        layoutMode: 'masonry'
-    });
-
-    $('#config-demo').daterangepicker();
-
+    // $('.sanpham').isotope({
+    //     // options
+    //     itemSelector: '.khoisp',
+    //     layoutMode: 'masonry'
+    // });
+    // $('#config-demo').daterangepicker();
 })
 
 
 
-require("trix")
-
-require("@rails/actiontext")
 
 
 

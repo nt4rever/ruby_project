@@ -104,7 +104,7 @@
                     </div>
                     <div class="datngay1">
                         <% if session[:username]  %>
-                        <input type="button" value="ĐẶT NGAY" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                        <input type="button" value="ĐẶT NGAY" id="btn_dat_phong" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
                         <% else%>
                         <a href="<%= login_path %>">
                             <span class="badge badge-info">Đăng nhập để đặt phòng</span>
@@ -231,7 +231,7 @@
                                 <%= form.text_field :content, class: 'form-control', id: "comment_text", required: true %>
                                 <%= form.hidden_field :hotel_id, class: 'form-control', value: @product.id %>
                                 <%= form.hidden_field :user_id, class: 'form-control', value: session[:customer_id]  %>
-                                <%= form.submit class: 'btn_danhgia btn btn-outline-primary ml-2' %>
+                                <%= form.submit "Gửi đi", class: 'btn_danhgia btn btn-outline-primary ml-2' %>
                                 <% end %>
                             </div>
                             <% end %>

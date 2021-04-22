@@ -102,7 +102,7 @@
                         <p>Thời gian nhận phòng: <%= item.time  %></p>
                         <p>Loại phòng: <%= item.type_hotel  %></p>
                         <p>Ghi chú: <%= item.note  %></p>
-                        <p>Thời gian đặt phòng: <%= item.updated_at.to_formatted_s(:long_ordinal)  %></p>
+                        <p>Thời gian đặt phòng: <%= item.updated_at.to_formatted_s(:db)  %></p>
                     </div>
                     <div class="col-sm-2 gia">
                         <h6>Giá: <%= number_to_currency(item.hotel.price_discount, unit: "đ",format: "%n %u", precision: 0)  %></h6>

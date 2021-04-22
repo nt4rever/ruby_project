@@ -66,4 +66,5 @@ gem "mini_magick"
 
 gem 'pickadate-rails'
 gem 'bootstrap-daterangepicker-rails'
-gem "dotenv-rails"
+
+gem 'figaro'

@@ -19,22 +19,22 @@ class ArticlesController < ApplicationController
     end 
 
     if params[:id]
-      @pagy, @all_product = pagy(CategoryHotel.find(params[:id]).sanpham.order("id DESC"), items: @show)
+      @pagy, @all_product = pagy(CategoryHotel.find(params[:id]).sanpham.where("status = 0").order("id DESC"), items: @show)
     else 
       if params[:filter]
         if  params[:filter]=="1"
-          @pagy, @all_product = pagy(Hotel.where("price_discount <= ?", 1000000).order("id DESC"), items: @show)
+          @pagy, @all_product = pagy(Hotel.where("price_discount <= ?", 1000000).where("status = 0").order("id DESC"), items: @show)
         elsif params[:filter]=="2"
-          @pagy, @all_product = pagy(Hotel.where("price_discount  BETWEEN ? AND ?", 1000000,5000000).order("id DESC"), items: @show)
+          @pagy, @all_product = pagy(Hotel.where("price_discount  BETWEEN ? AND ?", 1000000,5000000).where("status = 0").order("id DESC"), items: @show)
         elsif params[:filter]=="3"
-          @pagy, @all_product = pagy(Hotel.where("price_discount  BETWEEN ? AND ?", 5000000,10000000).order("id DESC"), items: @show)
+          @pagy, @all_product = pagy(Hotel.where("price_discount  BETWEEN ? AND ?", 5000000,10000000).where("status = 0").order("id DESC"), items: @show)
         elsif params[:filter]=="4"
-          @pagy, @all_product = pagy(Hotel.where("price_discount >= ?", 10000000).order("id DESC"), items: @show)
+          @pagy, @all_product = pagy(Hotel.where("price_discount >= ?", 10000000).where("status = 0").order("id DESC"), items: @show)
         else  
-          @pagy, @all_product = pagy(Hotel.all.order("id DESC"), items: @show)
+          @pagy, @all_product = pagy(Hotel.all.where("status = 0").order("id DESC"), items: @show)
         end
       else  
-        @pagy, @all_product = pagy(Hotel.all.order("id DESC"), items: @show)
+        @pagy, @all_product = pagy(Hotel.all.where("status = 0").order("id DESC"), items: @show)
       end
     end
     
@@ -80,7 +80,7 @@ class ArticlesController < ApplicationController
 
   def search 
     @all_category = CategoryHotel.all
-    @pagy, @all_product = pagy(Hotel.where("name LIKE ?","%"+params[:text]+"%").order("id DESC"), items: 4)
+    @pagy, @all_product = pagy(Hotel.where("name LIKE ?","%"+params[:text]+"%").where("status = 0").order("id DESC"), items: 4)
     render "khachsan"
   end
 

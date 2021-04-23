@@ -36,8 +36,9 @@
                              <th>price</th>
                              <th>price_discount</th>
                              <th>rank</th>
-                             <th>category_id</th>
+                             <th>category</th>
                              <th>updated_at</th>
+                             <th>status</th>
                              <th>edit</th>
                          </tr>
                      </thead>
@@ -49,7 +50,7 @@
                                  <%= pro.id  %>
                              </td>
                              <td>
-                                 <%= image_tag(pro.image.url,style: "width:100px;", alt: 'Image') if pro.image? %>
+                                 <%= image_tag(pro.image.url,style: "width:80px;", alt: 'Image') if pro.image? %>
                              </td>
                              <td>
                                  <%= pro.name  %>
@@ -60,18 +61,25 @@
                              <td>
                                  <%= number_to_currency(pro.price_discount, unit: "đ",format: "%n %u", precision: 0)  %>
                              </td>
-                              <td>
-                                 <%= pro.rating  %>
+                             <td>
+                                 <%= pro.rating  %> <span style="color:#FFC107"><i class="fa fa-star"></i></span>
                              </td>
                              <td>
-                                 <%= pro.category_hotels_id  %>
+                                 <%= pro.danhmuc.category_name  %>
                              </td>
                              <td>
-                                 <%= pro.updated_at %>
+                                 <%= pro.updated_at.to_formatted_s(:short)  %>
+                             </td>
+                             <td>
+                                 <% if pro.status==0 %>
+                                 <span class="badge badge-success">Hiển thị</span>
+                                 <% else %>
+                                 <span class="badge badge-dark">Ẩn</span>
+                                 <% end %>
                              </td>
                              <td>
                                  <a href="<%= gallery_path(:id=>pro.id) %>" class="btn btn-sm btn-outline-success">
-                                   <i class="fas fa-images"></i>
+                                     <i class="fas fa-images"></i>
                                  </a>
                                  <a href="<%= delete_product_path(:id=>pro.id) %>" class="btn btn-sm btn-outline-danger" onclick='return confirm("Xóa danh mục này!");'>
                                      <i class="fas fa-trash"></i>

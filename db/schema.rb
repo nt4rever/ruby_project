@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_21_082439) do
+ActiveRecord::Schema.define(version: 2021_04_23_114916) do
 
   create_table "action_text_rich_texts", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 2021_04_21_082439) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "content"
     t.string "price_discount"
+    t.integer "status", default: 0
     t.index ["category_hotels_id"], name: "index_hotels_on_category_hotels_id"
   end
 

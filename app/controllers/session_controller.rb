@@ -1,6 +1,8 @@
 class SessionController < ApplicationController
   layout "login_layout"
+  
   def new
+
   end
 
   def create
@@ -8,7 +10,11 @@ class SessionController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:username] = user.lastName
       session[:customer_id] = user.id
-      redirect_to :root
+      if session[:login_back_url]
+         redirect_to session[:login_back_url]
+      else   
+        redirect_to root_path
+      end
     else
       flash[:danger] = "Email hoặc mật khẩu không đúng!"
       render :new

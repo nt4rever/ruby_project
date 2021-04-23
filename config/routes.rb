@@ -50,7 +50,7 @@ Rails.application.routes.draw do
        get 'new_gallery', to: 'gallery#new'
        post 'create_gallery', to: 'gallery#create'
 
-       get 'account', to: 'admin#account'
+
 
 
        get 'post', to: 'post#post'
@@ -67,6 +67,8 @@ Rails.application.routes.draw do
        get 'order_confirm', to: 'order#confirm'
        get 'order_cancel', to: 'order#cancel'
 
+
+       get 'account', to: 'admin#account'
        get 'change_pass' , to: "admin#change_pass"
         post 'update_account', to: "admin#update"
   end

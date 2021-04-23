@@ -2,7 +2,7 @@
     <div class="col-md-8">
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Đổi mật khẩu <%= @account.lastName%></h3>
+                <h3 class="card-title">Sửa thông tin tài khoản: <%= @account.lastName%></h3>
             </div>
             <section class="content" style="min-height: auto;display: flex;justify-content: center;">
                 <% flash.each do |key, value| %>
@@ -17,7 +17,7 @@
             <%= form_for:account,url: update_account_path(:id => @account.id) do |f| %>
             <div class="card-body">
                 <div class="form-group">
-                    <label for="category_name">Tên </label>
+                    <label for="category_name">Họ, tên đệm </label>
                     <%=f.text_field :firstName, class:'form-control', required: 'true' %>
                 </div>
                 <div class="form-group">
@@ -26,8 +26,9 @@
                 </div>
                 <div class="form-group">
                     <label for="category_name">Role </label>
-                    <%=f.text_field :role, class:'form-control', required: 'true' %>
+                     <%= f.select(:role, ["customer", "admin"], {}, { :class => 'form-control' }) %>
                 </div>
+                <p class="text-danger">Nếu không thay đổi mật khẩu, vui lòng bỏ qua 2 trường này! </p>
                 <div class="form-group">
                     <label for="category_name">Mật khẩu </label>
                     <%= f.password_field :password, class: "form-control", placeholder: "Mật khẩu" %>

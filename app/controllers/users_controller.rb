@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   layout "register_layout"
-    def index
-      @all_user = User.all
-    end
+
   
     def new
       @user = User.new

@@ -9,14 +9,17 @@ class AdminController < ApplicationController
   def account
     check_session
     @taikhoan_active = 'active'
-    @pagy, @all_account = pagy(User.all, item: 10)
+    @pagy, @all_account = pagy(User.all.order("id DESC"), item: 10)
   end
 
   def change_pass
+    check_session
+    @taikhoan_active = 'active'
     @account = User.find(params[:id])
   end
   
   def update 
+    check_session
     @account = User.find(params[:id])
     if @account.update(account_params)
       flash[:success] = "Sửa danh mục thành công!"

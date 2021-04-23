@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   layout "articles_layout"
+  after_action :get_url_back_login
+
   def index
     @sanpham = Hotel.all.order("id DESC").limit(10)
     @all_post = Post.all.order("id DESC").limit(3)
@@ -19,10 +21,26 @@ class ArticlesController < ApplicationController
     if params[:id]
       @pagy, @all_product = pagy(CategoryHotel.find(params[:id]).sanpham.order("id DESC"), items: @show)
     else 
-      @pagy, @all_product = pagy(Hotel.all.order("id DESC"), items: @show)
+      if params[:filter]
+        if  params[:filter]=="1"
+          @pagy, @all_product = pagy(Hotel.where("price_discount <= ?", 1000000).order("id DESC"), items: @show)
+        elsif params[:filter]=="2"
+          @pagy, @all_product = pagy(Hotel.where("price_discount  BETWEEN ? AND ?", 1000000,5000000).order("id DESC"), items: @show)
+        elsif params[:filter]=="3"
+          @pagy, @all_product = pagy(Hotel.where("price_discount  BETWEEN ? AND ?", 5000000,10000000).order("id DESC"), items: @show)
+        elsif params[:filter]=="4"
+          @pagy, @all_product = pagy(Hotel.where("price_discount >= ?", 10000000).order("id DESC"), items: @show)
+        else  
+          @pagy, @all_product = pagy(Hotel.all.order("id DESC"), items: @show)
+        end
+      else  
+        @pagy, @all_product = pagy(Hotel.all.order("id DESC"), items: @show)
+      end
     end
     
+    
   end
+
   def detail
     @comments = Comment.where(["hotel_id = :u", { u: params[:id] }])
     @product = Hotel.find(params[:id])
@@ -69,6 +87,11 @@ class ArticlesController < ApplicationController
   def post_search
     @pagy, @all_post = pagy(Post.where("post_title LIKE ?","%"+params[:text]+"%").order("id DESC"), items: 3)
     render "tintuc"
+  end
+
+  def get_url_back_login  
+    session.delete(:login_back_url)
+    session[:login_back_url] = request.referrer
   end
   
 end

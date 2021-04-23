@@ -29,7 +29,15 @@
             });
 
             $("#change_number_item").on('change', function() {
-                window.location = '/khachsan?show=' + this.value
+                <% if params[:filter] %>
+                window.location = '/khachsan?filter='+ <%= params[:filter] %> + "&show=" + this.value
+                <% else %>
+                    window.location = '/khachsan?show=' + this.value
+                <% end %>
+            });
+
+            $("#change_filter_item").on('change', function() {
+                window.location = '/khachsan?filter=' + this.value
             });
 
         });

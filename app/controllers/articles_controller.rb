@@ -55,6 +55,7 @@ class ArticlesController < ApplicationController
 
   def tintuc
     @pagy, @all_post = pagy(Post.all.order("id DESC"), items: 3)
+    @all_post_latest = Post.all.order("id DESC").limit(5)
   end
 
   def tintuc_chitiet
@@ -86,6 +87,7 @@ class ArticlesController < ApplicationController
 
   def post_search
     @pagy, @all_post = pagy(Post.where("post_title LIKE ?","%"+params[:text]+"%").order("id DESC"), items: 3)
+    @all_post_latest = Post.all.order("id DESC").limit(5)
     render "tintuc"
   end
 

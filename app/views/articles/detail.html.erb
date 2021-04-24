@@ -113,7 +113,7 @@
                     </div>
                     <hr>
                     <div class="ghichu">
-                        <p class="text-muted">Danh mục: khách sạn</p>
+                        <p class="text-muted">Danh mục: <%= @product.danhmuc.category_name %></p>
                     </div>
                     <div class="lienket">
                         <p class="iconf">
@@ -220,7 +220,11 @@
                     <li>
                         <div class="moi_dung">
                             <div class="box_cmt">
+                                <% if @comment %>
                                 <%= render partial: "comments/index",  collection: @comments, as: "comment" %>
+                                <% else %> 
+                                Chưa có bình luận nào!
+                                <% end %>
                             </div>
 
 

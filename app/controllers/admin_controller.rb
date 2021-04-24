@@ -22,10 +22,10 @@ class AdminController < ApplicationController
     check_session
     @account = User.find(params[:id])
     if @account.update(account_params)
-      flash[:success] = "Sửa danh mục thành công!"
+      flash[:success] = "Sửa tài khoản thành công!"
       redirect_to account_path
     else
-      flash[:danger] = "Sửa danh mục thất bại!"
+      flash[:danger] = "Sửa tài khoản thất bại!"
       redirect_to account_path
     end
   end

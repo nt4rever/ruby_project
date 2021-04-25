@@ -1,3 +1,7 @@
+
+if ($('.box_cmt').text().trim()=="Chưa có bình luận nào!"){
+$('.box_cmt').text("")
+}
 $('.box_cmt').append('<%= render @comment %>')
 $(".toast").css("opacity", "1");
 $('#comment_text').val('')

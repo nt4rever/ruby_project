@@ -7,7 +7,7 @@ class CreateHotels < ActiveRecord::Migration[6.1]
       t.string :image
       t.integer :view
       t.integer :rating
-      t.references :category_hotels, null: false, foreign_key: true
+      t.references :category_hotel, null: false, foreign_key: true
 
       t.timestamps
     end

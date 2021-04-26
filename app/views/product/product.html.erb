@@ -65,7 +65,7 @@
                                  <%= pro.rating  %> <span style="color:#FFC107"><i class="fa fa-star"></i></span>
                              </td>
                              <td>
-                                 <%= pro.danhmuc.category_name  %>
+                                 <%= pro.category_hotel.category_name  %>
                              </td>
                              <td>
                                  <%= pro.updated_at.to_formatted_s(:short)  %>
@@ -81,7 +81,7 @@
                                  <a href="<%= gallery_path(:id=>pro.id) %>" class="btn btn-sm btn-outline-success">
                                      <i class="fas fa-images"></i>
                                  </a>
-                                 <a href="<%= delete_product_path(:id=>pro.id) %>" class="btn btn-sm btn-outline-danger" onclick='return confirm("Xóa danh mục này!");'>
+                                 <a href="<%= delete_product_path(:id=>pro.id) %>" class="btn btn-sm btn-outline-danger" onclick='return confirm("Xóa sản phẩm này!");'>
                                      <i class="fas fa-trash"></i>
                                  </a>
                                  <a href="<%= edit_product_path(:id=>pro.id) %>" class="btn btn-sm btn-outline-warning">

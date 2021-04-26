@@ -113,7 +113,7 @@
                     </div>
                     <hr>
                     <div class="ghichu">
-                        <p class="text-muted">Danh mục: <%= @product.danhmuc.category_name %></p>
+                        <p class="text-muted">Danh mục: <%= @product.category_hotel.category_name %></p>
                     </div>
                     <div class="lienket">
                         <p class="iconf">
@@ -220,7 +220,7 @@
                     <li>
                         <div class="moi_dung">
                             <div class="box_cmt">
-                                <% if @comment %>
+                                <% if @comments %>
                                 <%= render partial: "comments/index",  collection: @comments, as: "comment" %>
                                 <% else %> 
                                 Chưa có bình luận nào!
@@ -245,12 +245,12 @@
             </div>
         </div>
     </div>
-    <% if @product.thuvienanh %>
+    <% if @product.gallery_hotel %>
 
     <div class="hinhanh container detail_slide mt-5">
         <h3 class="text-center">Thư viện ảnh</h3>
         <div class="carousel" data-flickity='{ "autoPlay": true }'>
-            <% @product.thuvienanh.path.each do |p| %>
+            <% @product.gallery_hotel.path.each do |p| %>
             <div class="carousel-cell">
                 <%= image_tag(p.url, alt: 'Image', style: "width:100%") %>
             </div>
@@ -267,8 +267,8 @@
                 <h3>SẢN PHẨM TƯƠNG TỰ</h3>
             </div>
             <div class="sanpham">
-                <% if @product.danhmuc.sanpham
-                        @relative = @product.danhmuc.sanpham.limit(4)
+                <% if @product.category_hotel.hotel
+                        @relative = @product.category_hotel.hotel.limit(4)
                  %>
                 <% @relative.each do |item| %>
                 <% if @product.id != item.id %>
@@ -277,7 +277,7 @@
                         <%= image_tag(item.image.url, alt: 'Image') if item.image? %>
                     </div>
                     <div class="chitiet">
-                        <p class="text-muted location"><%= item.danhmuc.category_name %></p>
+                        <p class="text-muted location"><%= item.category_hotel.category_name %></p>
                         <a href="<%= detail_path(:id => item.id) %>">
                             <p class="text-dark title"><%= item.name %></p>
                         </a>

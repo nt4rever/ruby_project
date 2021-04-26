@@ -1,4 +1,4 @@
 class GalleryHotel < ApplicationRecord
-  belongs_to :sanpham, class_name: "Hotel", foreign_key: "hotels_id"
+  belongs_to :hotel
   mount_uploaders :path, ImageUploader
 end

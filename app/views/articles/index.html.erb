@@ -214,7 +214,7 @@
                                     <div class="anh">
                                         <%= image_tag(item.image.url, alt: 'Image') if item.image? %>
                                         <div class="chitiet">
-                                            <p class="text-muted location"><%= item.danhmuc.category_name %></p>
+                                            <p class="text-muted location"><%= item.category_hotel.category_name %></p>
                                             <p class="text-dark title"><%= item.name  %></p>
                                             <p class="gia">
                                                 <% if item.price_discount==nil || item.price_discount == item.price %>

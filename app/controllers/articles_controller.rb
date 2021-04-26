@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
     end 
 
     if params[:id]
-      @pagy, @all_product = pagy(CategoryHotel.find(params[:id]).sanpham.where("status = 0").order("id DESC"), items: @show)
+      @pagy, @all_product = pagy(CategoryHotel.find(params[:id]).hotel.where("status = 0").order("id DESC"), items: @show)
     else 
       if params[:filter]
         if  params[:filter]=="1"
@@ -30,6 +30,10 @@ class ArticlesController < ApplicationController
           @pagy, @all_product = pagy(Hotel.where("price_discount  BETWEEN ? AND ?", 5000000,10000000).where("status = 0").order("id DESC"), items: @show)
         elsif params[:filter]=="4"
           @pagy, @all_product = pagy(Hotel.where("price_discount >= ?", 10000000).where("status = 0").order("id DESC"), items: @show)
+        elsif params[:filter]=="5"
+          @pagy, @all_product = pagy(Hotel.order("price_discount ASC"), items: @show)
+        elsif params[:filter]=="6"
+          @pagy, @all_product = pagy(Hotel.order("price_discount DESC"), items: @show)
         else  
           @pagy, @all_product = pagy(Hotel.all.where("status = 0").order("id DESC"), items: @show)
         end
@@ -42,15 +46,14 @@ class ArticlesController < ApplicationController
   end
 
   def detail
-    @comments = Comment.where(["hotel_id = :u", { u: params[:id] }])
     @product = Hotel.find(params[:id])
+    @comments = Comment.where(["hotel_id = :u", { u: params[:id] }])
     if @product.view!=nil
       @product.view +=1
     else 
       @product.view = 1
     end
     @product.save
-    
   end
 
   def tintuc

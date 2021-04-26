@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_23_114916) do
+ActiveRecord::Schema.define(version: 2021_04_26_061557) do
 
   create_table "action_text_rich_texts", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -79,27 +79,27 @@ ActiveRecord::Schema.define(version: 2021_04_23_114916) do
   end
 
   create_table "gallery_hotels", charset: "utf8mb4", force: :cascade do |t|
-    t.bigint "hotels_id", null: false
+    t.bigint "hotel_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.json "path"
-    t.index ["hotels_id"], name: "index_gallery_hotels_on_hotels_id"
+    t.index ["hotel_id"], name: "index_gallery_hotels_on_hotel_id"
   end
 
   create_table "hotels", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.text "desc"
-    t.string "price"
+    t.integer "price"
     t.string "image"
     t.integer "view"
     t.integer "rating"
-    t.bigint "category_hotels_id", null: false
+    t.bigint "category_hotel_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "content"
-    t.string "price_discount"
+    t.integer "price_discount"
     t.integer "status", default: 0
-    t.index ["category_hotels_id"], name: "index_hotels_on_category_hotels_id"
+    t.index ["category_hotel_id"], name: "index_hotels_on_category_hotel_id"
   end
 
   create_table "orders", charset: "utf8mb4", force: :cascade do |t|
@@ -137,15 +137,14 @@ ActiveRecord::Schema.define(version: 2021_04_23_114916) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "email", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "hotels"
   add_foreign_key "comments", "users"
-  add_foreign_key "gallery_hotels", "hotels", column: "hotels_id"
-  add_foreign_key "hotels", "category_hotels", column: "category_hotels_id"
+  add_foreign_key "gallery_hotels", "hotels"
+  add_foreign_key "hotels", "category_hotels"
   add_foreign_key "orders", "hotels"
   add_foreign_key "orders", "users"
 end

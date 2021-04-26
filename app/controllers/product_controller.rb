@@ -60,7 +60,7 @@ class ProductController < ApplicationController
     
 
     def product_params
-        params.require(:product).permit(:name, :desc, :price, :price_discount, :image,:category_hotels_id, :content, :rating, :status)
+        params.require(:product).permit(:name, :desc, :price, :price_discount, :image,:category_hotel_id, :content, :rating, :status)
     end
 
     private
